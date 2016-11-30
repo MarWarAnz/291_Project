@@ -10,45 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 
-
-
 namespace WindowsFormsApplication2 {
 
     public partial class Main : Form {
         public Main() {
             InitializeComponent();
-
-            //            populateTables();
-        }
-        /*
-                private void populateTables()
-                {
-                    string connString = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT291_Project"].ConnectionString;
-                    using (SqlConnection conn = new SqlConnection(connString))
-                    {
-                        conn.Open();
-                        SqlCommand command = new SqlCommand("SELECT * FROM TableName WHERE FirstColumn = @0", conn);
-                    }
-                }       
-        */
-        private void Main_Load(object sender, EventArgs e) {
-            // TODO: This line of code loads data into the 'cMPT291_ProjectDataSet8.Employees' table. You can move, or remove it, as needed.
-            //            this.employeesTableAdapter.Fill(this.cMPT291_ProjectDataSet8.Employees);
-            // TODO: This line of code loads data into the 'cMPT291_ProjectDataSet7.Branches' table. You can move, or remove it, as needed.
-            //            this.branchesTableAdapter5.Fill(this.cMPT291_ProjectDataSet7.Branches);
-            // TODO: This line of code loads data into the 'cMPT291_ProjectDataSet6.Branches' table. You can move, or remove it, as needed.
-            //            this.branchesTableAdapter4.Fill(this.cMPT291_ProjectDataSet6.Branches);
-            // TODO: This line of code loads data into the 'cMPT291_ProjectDataSet5.Branches' table. You can move, or remove it, as needed.
-            //            this.branchesTableAdapter3.Fill(this.cMPT291_ProjectDataSet5.Branches);
-            // TODO: This line of code loads data into the 'cMPT291_ProjectDataSet4.Branches' table. You can move, or remove it, as needed.
-            //            this.branchesTableAdapter2.Fill(this.cMPT291_ProjectDataSet4.Branches);
-            // TODO: This line of code loads data into the 'cMPT291_ProjectDataSet3.Branches' table. You can move, or remove it, as needed.
-            //            this.branchesTableAdapter1.Fill(this.cMPT291_ProjectDataSet3.Branches);
-            // TODO: This line of code loads data into the 'cMPT291_ProjectDataSet2.Branches' table. You can move, or remove it, as needed.
-            //            this.branchesTableAdapter.Fill(this.cMPT291_ProjectDataSet2.Branches);
-            // TODO: This line of code loads data into the 'cMPT291_ProjectDataSet1.Customers' table. You can move, or remove it, as needed.
-            //            this.customersTableAdapter.Fill(this.cMPT291_ProjectDataSet1.Customers);
-
         }
 
         private void branches_create_submitbtn_Click(object sender, EventArgs e) {
@@ -148,7 +114,6 @@ namespace WindowsFormsApplication2 {
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = connection;
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
-                //                connection.Open();
                 DataTable results = new DataTable();
                 data.Fill(results);
                 display.DataSource = results;

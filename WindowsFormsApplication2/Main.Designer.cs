@@ -60,7 +60,6 @@
             this.mileageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentBIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet = new WindowsFormsApplication2.CMPT291_ProjectDataSet();
             this.button5 = new System.Windows.Forms.Button();
             this.cars_search_BID = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -97,7 +96,6 @@
             this.label49 = new System.Windows.Forms.Label();
             this.branches_search_Province = new System.Windows.Forms.ComboBox();
             this.branchesBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet6 = new WindowsFormsApplication2.CMPT291_ProjectDataSet6();
             this.label48 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
@@ -112,7 +110,6 @@
             this.phone1DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone2DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet2 = new WindowsFormsApplication2.CMPT291_ProjectDataSet2();
             this.customers = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.customers_create = new System.Windows.Forms.TabPage();
@@ -170,7 +167,6 @@
             this.phone2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet1 = new WindowsFormsApplication2.CMPT291_ProjectDataSet1();
             this.employees = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.employees_create = new System.Windows.Forms.TabPage();
@@ -200,7 +196,6 @@
             this.label54 = new System.Windows.Forms.Label();
             this.postalCodeComboBox = new System.Windows.Forms.ComboBox();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet8 = new WindowsFormsApplication2.CMPT291_ProjectDataSet8();
             this.provinceComboBox = new System.Windows.Forms.ComboBox();
             this.cityComboBox = new System.Windows.Forms.ComboBox();
             this.address2ComboBox = new System.Windows.Forms.ComboBox();
@@ -254,23 +249,9 @@
             this.types = new System.Windows.Forms.TabPage();
             this.tabControl10 = new System.Windows.Forms.TabControl();
             this.branchesBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet7 = new WindowsFormsApplication2.CMPT291_ProjectDataSet7();
             this.branchesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet4 = new WindowsFormsApplication2.CMPT291_ProjectDataSet4();
             this.branchesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet3 = new WindowsFormsApplication2.CMPT291_ProjectDataSet3();
             this.branchesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.cMPT291_ProjectDataSet5 = new WindowsFormsApplication2.CMPT291_ProjectDataSet5();
-            this.vehicleTableAdapter = new WindowsFormsApplication2.CMPT291_ProjectDataSetTableAdapters.VehicleTableAdapter();
-            this.customersTableAdapter = new WindowsFormsApplication2.CMPT291_ProjectDataSet1TableAdapters.CustomersTableAdapter();
-            this.branchesTableAdapter = new WindowsFormsApplication2.CMPT291_ProjectDataSet2TableAdapters.BranchesTableAdapter();
-            this.branchesTableAdapter1 = new WindowsFormsApplication2.CMPT291_ProjectDataSet3TableAdapters.BranchesTableAdapter();
-            this.branchesTableAdapter2 = new WindowsFormsApplication2.CMPT291_ProjectDataSet4TableAdapters.BranchesTableAdapter();
-            this.branchesTableAdapter3 = new WindowsFormsApplication2.CMPT291_ProjectDataSet5TableAdapters.BranchesTableAdapter();
-            this.branchesTableAdapter4 = new WindowsFormsApplication2.CMPT291_ProjectDataSet6TableAdapters.BranchesTableAdapter();
-            this.branchesTableAdapter5 = new WindowsFormsApplication2.CMPT291_ProjectDataSet7TableAdapters.BranchesTableAdapter();
-            this.employeesTableAdapter = new WindowsFormsApplication2.CMPT291_ProjectDataSet8TableAdapters.EmployeesTableAdapter();
-            this.tableAdapterManager = new WindowsFormsApplication2.CMPT291_ProjectDataSet8TableAdapters.TableAdapterManager();
             eIDLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -289,29 +270,24 @@
             this.cars_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet)).BeginInit();
             this.branches.SuspendLayout();
             this.tabControl6.SuspendLayout();
             this.branches_create.SuspendLayout();
             this.branches_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branches_search_Results)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet2)).BeginInit();
             this.customers.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.customers_create.SuspendLayout();
             this.customers_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet1)).BeginInit();
             this.employees.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.employees_create.SuspendLayout();
             this.employees_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bIDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eIDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
@@ -328,13 +304,9 @@
             this.status_create.SuspendLayout();
             this.types.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet5)).BeginInit();
             this.SuspendLayout();
             // 
             // eIDLabel
@@ -672,16 +644,6 @@
             this.currentBIDDataGridViewTextBoxColumn.HeaderText = "currentBID";
             this.currentBIDDataGridViewTextBoxColumn.Name = "currentBIDDataGridViewTextBoxColumn";
             // 
-            // vehicleBindingSource
-            // 
-            this.vehicleBindingSource.DataMember = "Vehicle";
-            this.vehicleBindingSource.DataSource = this.cMPT291_ProjectDataSet;
-            // 
-            // cMPT291_ProjectDataSet
-            // 
-            this.cMPT291_ProjectDataSet.DataSetName = "CMPT291_ProjectDataSet";
-            this.cMPT291_ProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(437, 59);
@@ -1015,16 +977,6 @@
             this.branches_search_Province.TabIndex = 5;
             this.branches_search_Province.ValueMember = "Province";
             // 
-            // branchesBindingSource4
-            // 
-            this.branchesBindingSource4.DataMember = "Branches";
-            this.branchesBindingSource4.DataSource = this.cMPT291_ProjectDataSet6;
-            // 
-            // cMPT291_ProjectDataSet6
-            // 
-            this.cMPT291_ProjectDataSet6.DataSetName = "CMPT291_ProjectDataSet6";
-            this.cMPT291_ProjectDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label48
             // 
             this.label48.AutoSize = true;
@@ -1137,16 +1089,6 @@
             this.phone2DataGridViewTextBoxColumn1.DataPropertyName = "Phone2";
             this.phone2DataGridViewTextBoxColumn1.HeaderText = "Phone2";
             this.phone2DataGridViewTextBoxColumn1.Name = "phone2DataGridViewTextBoxColumn1";
-            // 
-            // branchesBindingSource
-            // 
-            this.branchesBindingSource.DataMember = "Branches";
-            this.branchesBindingSource.DataSource = this.cMPT291_ProjectDataSet2;
-            // 
-            // cMPT291_ProjectDataSet2
-            // 
-            this.cMPT291_ProjectDataSet2.DataSetName = "CMPT291_ProjectDataSet2";
-            this.cMPT291_ProjectDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // customers
             // 
@@ -1657,16 +1599,6 @@
             this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
             this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
             // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataMember = "Customers";
-            this.customersBindingSource.DataSource = this.cMPT291_ProjectDataSet1;
-            // 
-            // cMPT291_ProjectDataSet1
-            // 
-            this.cMPT291_ProjectDataSet1.DataSetName = "CMPT291_ProjectDataSet1";
-            this.cMPT291_ProjectDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // employees
             // 
             this.employees.AutoScroll = true;
@@ -1958,16 +1890,6 @@
             this.postalCodeComboBox.Name = "postalCodeComboBox";
             this.postalCodeComboBox.Size = new System.Drawing.Size(92, 21);
             this.postalCodeComboBox.TabIndex = 18;
-            // 
-            // employeesBindingSource
-            // 
-            this.employeesBindingSource.DataMember = "Employees";
-            this.employeesBindingSource.DataSource = this.cMPT291_ProjectDataSet8;
-            // 
-            // cMPT291_ProjectDataSet8
-            // 
-            this.cMPT291_ProjectDataSet8.DataSetName = "CMPT291_ProjectDataSet8";
-            this.cMPT291_ProjectDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // provinceComboBox
             // 
@@ -2445,88 +2367,6 @@
             this.tabControl10.Size = new System.Drawing.Size(748, 327);
             this.tabControl10.TabIndex = 2;
             // 
-            // branchesBindingSource5
-            // 
-            this.branchesBindingSource5.DataMember = "Branches";
-            this.branchesBindingSource5.DataSource = this.cMPT291_ProjectDataSet7;
-            // 
-            // cMPT291_ProjectDataSet7
-            // 
-            this.cMPT291_ProjectDataSet7.DataSetName = "CMPT291_ProjectDataSet7";
-            this.cMPT291_ProjectDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // branchesBindingSource2
-            // 
-            this.branchesBindingSource2.DataMember = "Branches";
-            this.branchesBindingSource2.DataSource = this.cMPT291_ProjectDataSet4;
-            // 
-            // cMPT291_ProjectDataSet4
-            // 
-            this.cMPT291_ProjectDataSet4.DataSetName = "CMPT291_ProjectDataSet4";
-            this.cMPT291_ProjectDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // branchesBindingSource1
-            // 
-            this.branchesBindingSource1.DataMember = "Branches";
-            this.branchesBindingSource1.DataSource = this.cMPT291_ProjectDataSet3;
-            // 
-            // cMPT291_ProjectDataSet3
-            // 
-            this.cMPT291_ProjectDataSet3.DataSetName = "CMPT291_ProjectDataSet3";
-            this.cMPT291_ProjectDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // branchesBindingSource3
-            // 
-            this.branchesBindingSource3.DataMember = "Branches";
-            this.branchesBindingSource3.DataSource = this.cMPT291_ProjectDataSet5;
-            // 
-            // cMPT291_ProjectDataSet5
-            // 
-            this.cMPT291_ProjectDataSet5.DataSetName = "CMPT291_ProjectDataSet5";
-            this.cMPT291_ProjectDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vehicleTableAdapter
-            // 
-            this.vehicleTableAdapter.ClearBeforeFill = true;
-            // 
-            // customersTableAdapter
-            // 
-            this.customersTableAdapter.ClearBeforeFill = true;
-            // 
-            // branchesTableAdapter
-            // 
-            this.branchesTableAdapter.ClearBeforeFill = true;
-            // 
-            // branchesTableAdapter1
-            // 
-            this.branchesTableAdapter1.ClearBeforeFill = true;
-            // 
-            // branchesTableAdapter2
-            // 
-            this.branchesTableAdapter2.ClearBeforeFill = true;
-            // 
-            // branchesTableAdapter3
-            // 
-            this.branchesTableAdapter3.ClearBeforeFill = true;
-            // 
-            // branchesTableAdapter4
-            // 
-            this.branchesTableAdapter4.ClearBeforeFill = true;
-            // 
-            // branchesTableAdapter5
-            // 
-            this.branchesTableAdapter5.ClearBeforeFill = true;
-            // 
-            // employeesTableAdapter
-            // 
-            this.employeesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.EmployeesTableAdapter = this.employeesTableAdapter;
-            this.tableAdapterManager.UpdateOrder = WindowsFormsApplication2.CMPT291_ProjectDataSet8TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2535,7 +2375,6 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Main";
             this.Text = "Bob\'s Car Rental";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl1.ResumeLayout(false);
             this.newRental.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
@@ -2547,7 +2386,6 @@
             this.cars_search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet)).EndInit();
             this.branches.ResumeLayout(false);
             this.tabControl6.ResumeLayout(false);
             this.branches_create.ResumeLayout(false);
@@ -2555,10 +2393,8 @@
             this.branches_search.ResumeLayout(false);
             this.branches_search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branches_search_Results)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet2)).EndInit();
             this.customers.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.customers_create.ResumeLayout(false);
@@ -2567,7 +2403,6 @@
             this.customers_search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet1)).EndInit();
             this.employees.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.employees_create.ResumeLayout(false);
@@ -2575,7 +2410,6 @@
             this.employees_search.ResumeLayout(false);
             this.employees_search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bIDNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eIDNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
@@ -2595,13 +2429,9 @@
             this.status_create.PerformLayout();
             this.types.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMPT291_ProjectDataSet5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2703,9 +2533,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private CMPT291_ProjectDataSet cMPT291_ProjectDataSet;
         private System.Windows.Forms.BindingSource vehicleBindingSource;
-        private CMPT291_ProjectDataSetTableAdapters.VehicleTableAdapter vehicleTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn vIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
@@ -2748,27 +2576,13 @@
         private System.Windows.Forms.TabPage types;
         private System.Windows.Forms.TabControl tabControl10;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private CMPT291_ProjectDataSet1 cMPT291_ProjectDataSet1;
         private System.Windows.Forms.BindingSource customersBindingSource;
-        private CMPT291_ProjectDataSet1TableAdapters.CustomersTableAdapter customersTableAdapter;
-        private CMPT291_ProjectDataSet2 cMPT291_ProjectDataSet2;
         private System.Windows.Forms.BindingSource branchesBindingSource;
-        private CMPT291_ProjectDataSet2TableAdapters.BranchesTableAdapter branchesTableAdapter;
-        private CMPT291_ProjectDataSet3 cMPT291_ProjectDataSet3;
         private System.Windows.Forms.BindingSource branchesBindingSource1;
-        private CMPT291_ProjectDataSet3TableAdapters.BranchesTableAdapter branchesTableAdapter1;
-        private CMPT291_ProjectDataSet4 cMPT291_ProjectDataSet4;
         private System.Windows.Forms.BindingSource branchesBindingSource2;
-        private CMPT291_ProjectDataSet4TableAdapters.BranchesTableAdapter branchesTableAdapter2;
-        private CMPT291_ProjectDataSet5 cMPT291_ProjectDataSet5;
         private System.Windows.Forms.BindingSource branchesBindingSource3;
-        private CMPT291_ProjectDataSet5TableAdapters.BranchesTableAdapter branchesTableAdapter3;
-        private CMPT291_ProjectDataSet6 cMPT291_ProjectDataSet6;
         private System.Windows.Forms.BindingSource branchesBindingSource4;
-        private CMPT291_ProjectDataSet6TableAdapters.BranchesTableAdapter branchesTableAdapter4;
-        private CMPT291_ProjectDataSet7 cMPT291_ProjectDataSet7;
         private System.Windows.Forms.BindingSource branchesBindingSource5;
-        private CMPT291_ProjectDataSet7TableAdapters.BranchesTableAdapter branchesTableAdapter5;
         private System.Windows.Forms.TabPage branches_search;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.ComboBox branches_search_Province;
@@ -2811,10 +2625,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dOBDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private CMPT291_ProjectDataSet8 cMPT291_ProjectDataSet8;
         private System.Windows.Forms.BindingSource employeesBindingSource;
-        private CMPT291_ProjectDataSet8TableAdapters.EmployeesTableAdapter employeesTableAdapter;
-        private CMPT291_ProjectDataSet8TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox postalCodeComboBox;
         private System.Windows.Forms.ComboBox provinceComboBox;
         private System.Windows.Forms.ComboBox cityComboBox;

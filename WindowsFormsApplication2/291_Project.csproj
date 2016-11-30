@@ -50,59 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProgramSetup.cs" />
-    <Compile Include="CMPT291_ProjectDataSet.cs">
-      <DependentUpon>CMPT291_ProjectDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet5.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet6.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet7.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet8.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet8.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CMPT291_ProjectDataSet9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CMPT291_ProjectDataSet9.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FieldValidation.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -112,11 +59,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rental_data_set.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Rental_data_set.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,116 +72,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="CMPT291_ProjectDataSet.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet.xss">
-      <DependentUpon>CMPT291_ProjectDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet1.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet1.xss">
-      <DependentUpon>CMPT291_ProjectDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet2.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet2.xss">
-      <DependentUpon>CMPT291_ProjectDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet3.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet3.xss">
-      <DependentUpon>CMPT291_ProjectDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet4.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet4.xss">
-      <DependentUpon>CMPT291_ProjectDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet5.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet5.xss">
-      <DependentUpon>CMPT291_ProjectDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet6.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet6.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet6.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet6.xss">
-      <DependentUpon>CMPT291_ProjectDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet7.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet7.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet7.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet7.xss">
-      <DependentUpon>CMPT291_ProjectDataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet8.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet8.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet8.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet8.xss">
-      <DependentUpon>CMPT291_ProjectDataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet9.xsc">
-      <DependentUpon>CMPT291_ProjectDataSet9.xsd</DependentUpon>
-    </None>
-    <None Include="CMPT291_ProjectDataSet9.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CMPT291_ProjectDataSet9.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CMPT291_ProjectDataSet9.xss">
-      <DependentUpon>CMPT291_ProjectDataSet9.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -249,17 +81,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Rental_data_set.xsc">
-      <DependentUpon>Rental_data_set.xsd</DependentUpon>
-    </None>
-    <None Include="Rental_data_set.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Rental_data_set.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Rental_data_set.xss">
-      <DependentUpon>Rental_data_set.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
