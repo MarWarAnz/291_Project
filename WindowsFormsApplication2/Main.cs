@@ -18,13 +18,45 @@ namespace WindowsFormsApplication2 {
 
             string[] Provinces = { "", "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT" };
             customers_create_Province.DataSource = Provinces;
+            branches_create_Province.DataSource = Provinces;
+            employees_create_Province.DataSource = Provinces;
 
+            PopulateCarTypeMenus();
+            PopulateStatusMenus();
+            PopulateBranchMenus();
+            PopulateVehicleMenus();
+        }
+
+        private void PopulateRateMenus() {
+            SqlCommand cmd = new SqlCommand("SELECT Name, RateID FROM Rates");
             Interaction interaction = new Interaction();
+            interaction.search(cmd, types_create_RateID, "Name", "RateID");
+        }
 
-            SqlCommand cmd = new SqlCommand("Select Model, TID from CarType");
+        private void PopulateVehicleMenus() {
+            SqlCommand cmd = new SqlCommand("SELECT CONCAT(Make, Model) as thisCar, VID FROM Vehicles INNER JOIN CarTypes ON Vehicles.TypeID = CarTypes.TID");
+            Interaction interaction = new Interaction();
+            interaction.search(cmd, rentals_create_Vehicle, "thisCar", "VID");
+        }
+
+        private void PopulateStatusMenus() {
+            SqlCommand cmd = new SqlCommand("Select Name, SID from Status");
+            Interaction interaction = new Interaction();
+            interaction.search(cmd, cars_create_Status, "Name", "SID");
+        }
+
+        private void PopulateBranchMenus() {
+            SqlCommand cmd = new SqlCommand("Select BID, Name from Branches");
+            Interaction interaction = new Interaction();
+            interaction.search(cmd, cars_create_CurrentBID, "Name", "BID");
+            interaction.search(cmd, employees_create_BID, "Name", "BID");
+            interaction.search(cmd, rentals_create_RentedBranch, "Name", "BID");
+        }
+
+        private void PopulateCarTypeMenus() {
+            SqlCommand cmd = new SqlCommand("Select Model, TID from CarTypes");
+            Interaction interaction = new Interaction();
             interaction.search(cmd, cars_create_TypeID, "Model", "TID");
-            cmd = new SqlCommand("Select BID, Name from Branches");
-            interaction.search(cmd, cars_create_BranchID, "Name", "BID");
         }
 
         private void branches_create_submitbtn_Click(object sender, EventArgs e) {
@@ -37,18 +69,20 @@ namespace WindowsFormsApplication2 {
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
+            PopulateBranchMenus();
         }
 
         private void cars_create_submitbtn_Click(object sender, EventArgs e) {
             SqlCommand cmd = new SqlCommand("INSERT INTO Vehicles " +
-            "(Type, VIN, Mileage, CurrentBID, Fee)" +
-            "VALUES (@TypeID, @VIN, @Mileage, @BranchID, @FID)");
-            Control[] fields = { cars_create_TypeID, cars_create_VIN, cars_create_Mileage, cars_create_BranchID };
-            validation.types[] checkAs = { validation.types.Type, validation.types.VIN, validation.types.Mileage, validation.types.ID };
-            bool[] nullable = { false, false, false, false};
+            "(TypeID, Status, VIN, Mileage, CurrentBID)" +
+            "VALUES (@TypeID, @Status, @VIN, @Mileage, @CurrentBID)");
+            Control[] fields = { cars_create_TypeID, cars_create_Status, cars_create_VIN, cars_create_Mileage, cars_create_CurrentBID };
+            validation.types[] checkAs = { validation.types.Type, validation.types.ID, validation.types.VIN, validation.types.Mileage, validation.types.ID };
+            bool[] nullable = { false, false, false, false, false};
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
+            PopulateVehicleMenus();
         }
 
         //DOB does not work
@@ -100,6 +134,32 @@ namespace WindowsFormsApplication2 {
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
+            PopulateStatusMenus();
+        }
+
+        private void types_create_submitbtn_Click(object sender, EventArgs e) {
+            SqlCommand cmd = new SqlCommand("INSERT INTO CarType " +
+                "(Make, Model, BodyType, RateID)" +
+                "VALUES (@Make, @Model, @BodyType, @RateID)");
+            Control[] fields = { types_create_Make, types_create_Model, types_create_BodyType, types_create_RateID };
+            validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Name, validation.types.ID};
+            bool[] nullable = { false, false, false, false };
+
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
+            PopulateCarTypeMenus();
+        }
+
+        private void rates_create_submitbtn_Click(object sender, EventArgs e) {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Rates " +
+                "(Name, Daily, Weekly, Monthly)" +
+                "VALUES (@Name, @Daily, @Weekly, @Monthly)");
+            Control[] fields = { rates_create_Name, rates_create_Daily, rates_create_Weekly, rates_create_Monthly };
+            validation.types[] checkAs = { validation.types.Name, validation.types.ID, validation.types.ID, validation.types.ID };
+            bool[] nullable = { false, false, false, false };
+
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
         }
 
         private void branches_search_Submitbtn_Click(object sender, EventArgs e) {
@@ -108,5 +168,6 @@ namespace WindowsFormsApplication2 {
             Interaction interaction = new Interaction();
             interaction.search(cmd, branches_search_Results);
         }
+
     }
 }

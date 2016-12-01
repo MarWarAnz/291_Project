@@ -12,13 +12,23 @@ public class Interaction
         bool accepted = true;
         validation isValid = new validation();
         for (int i = 0; i < fields.Length; i++) {
+            fields[i].BackColor = Color.White;
+            if (nullable[i] == true && fields[i].Text.Length == 0)
+                continue;
             if (nullable[i] == false && fields[i].Text.Length == 0) {
                 fields[i].BackColor = Color.Tomato;
                 accepted = false;
-            }
-            if (!isValid.validate(fields[i].Text, checkAs[i])) {
-                fields[i].BackColor = Color.Tomato;
-                accepted = false;
+            } 
+            if (fields[i] is TextBox || fields[i] is ComboBox || fields[i] is DateTimePicker || fields[i] is NumericUpDown) {
+                if (!isValid.validate(fields[i].Text, checkAs[i])) {
+                    fields[i].BackColor = Color.Tomato;
+                    accepted = false;
+                }
+            } else if (fields [i] is ListBox) {
+                if (!isValid.validate((fields[i] as ListBox).SelectedValue.ToString(), checkAs[i])) {
+                    fields[i].BackColor = Color.Tomato;
+                    accepted = false;
+                }
             }
         }
         if (accepted == false)
@@ -29,10 +39,12 @@ public class Interaction
             cmd.Connection = connection;
             for (int i = 0; i < fields.Length; i++) {
                 int index = fields[i].Name.LastIndexOf('_');
-                if (fields[i] is TextBox)
+                if (fields[i] is TextBox || fields[i] is ComboBox || fields[i] is DateTimePicker)
                     cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), fields[i].Text);
-//                else if (fields[i] is ListBox)
-//                    cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), fields[i].GetItemText;
+                else if (fields[i] is ListBox)
+                    cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), (fields[i] as ListBox).SelectedValue);
+                else if (fields[i] is NumericUpDown)
+                    cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), fields[i].Text);
                 fields[i].Text = "";
             }
             connection.Open();

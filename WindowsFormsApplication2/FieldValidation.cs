@@ -55,14 +55,11 @@ public class validation
                         return false;
                 return true;
             case types.PostalCode:
-                for (int i = 0; i < str.Length; i++) {
-                    if (i % 2 == 0)
-                        if (!char.IsLetter(str[i]))
-                            return false;
-                        else if (!char.IsDigit(str[i]))
-                            return false;
-                    return true;
-                }
+                if (str.Length != 6)
+                    return false;
+                for (int i = 0; i < str.Length; i++)
+                    if (!char.IsLetterOrDigit(str[i]))
+                        return false;
                 return true;
             //alphaNumeric plus Special Characters
             case types.Email:

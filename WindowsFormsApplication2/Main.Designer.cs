@@ -69,7 +69,6 @@
             this.branches_create_submitbtn = new System.Windows.Forms.Button();
             this.branches_create_Address2 = new System.Windows.Forms.TextBox();
             this.branches_create_City = new System.Windows.Forms.TextBox();
-            this.branches_create_Province = new System.Windows.Forms.TextBox();
             this.branches_create_PostalCode = new System.Windows.Forms.TextBox();
             this.branches_create_Address1 = new System.Windows.Forms.TextBox();
             this.branches_create_Name = new System.Windows.Forms.TextBox();
@@ -104,7 +103,6 @@
             this.customers_create_PostalCode = new System.Windows.Forms.TextBox();
             this.customers_create_Address1 = new System.Windows.Forms.TextBox();
             this.customers_create_CC = new System.Windows.Forms.TextBox();
-            this.customers_create_DOB = new System.Windows.Forms.TextBox();
             this.customers_create_DLN = new System.Windows.Forms.TextBox();
             this.customers_create_Phone2 = new System.Windows.Forms.TextBox();
             this.customers_create_Phone1 = new System.Windows.Forms.TextBox();
@@ -140,12 +138,10 @@
             this.employees = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.employees_create = new System.Windows.Forms.TabPage();
-            this.employees_create_BID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.employees_create_submitbtn = new System.Windows.Forms.Button();
             this.employees_create_Address2 = new System.Windows.Forms.TextBox();
             this.employees_create_City = new System.Windows.Forms.TextBox();
-            this.employees_create_Province = new System.Windows.Forms.TextBox();
             this.employees_create_PostalCode = new System.Windows.Forms.TextBox();
             this.employees_create_Address1 = new System.Windows.Forms.TextBox();
             this.employees_create_Phone2 = new System.Windows.Forms.TextBox();
@@ -185,19 +181,14 @@
             this.fees_create_Name = new System.Windows.Forms.TextBox();
             this.fees_create_submitbtn = new System.Windows.Forms.Button();
             this.fees_search = new System.Windows.Forms.TabPage();
-            this.rentalfees = new System.Windows.Forms.TabPage();
+            this.rates = new System.Windows.Forms.TabPage();
             this.tabControl9 = new System.Windows.Forms.TabControl();
-            this.rentalfees_create = new System.Windows.Forms.TabPage();
+            this.rates_create = new System.Windows.Forms.TabPage();
             this.label44 = new System.Windows.Forms.Label();
-            this.rentalfees_create_Weekly = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.rentalfees_create_Monthly = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.rentalfees_create_Daily = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.rentalfees_create_TID = new System.Windows.Forms.TextBox();
-            this.rentalfees_create_submitbtn = new System.Windows.Forms.Button();
-            this.rentalfees_search = new System.Windows.Forms.TabPage();
+            this.rates_create_submitbtn = new System.Windows.Forms.Button();
+            this.rates_search = new System.Windows.Forms.TabPage();
             this.Rental_fees_dataTable = new System.Windows.Forms.DataGridView();
             this.status = new System.Windows.Forms.TabPage();
             this.tabControl8 = new System.Windows.Forms.TabControl();
@@ -207,13 +198,43 @@
             this.status_create_submitbtn = new System.Windows.Forms.Button();
             this.status_search = new System.Windows.Forms.TabPage();
             this.types = new System.Windows.Forms.TabPage();
-            this.tabControl10 = new System.Windows.Forms.TabControl();
             this.branchesBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.cars_create_TypeID = new System.Windows.Forms.ListBox();
-            this.cars_create_BranchID = new System.Windows.Forms.ListBox();
+            this.cars_create_CurrentBID = new System.Windows.Forms.ListBox();
+            this.cars_create_Status = new System.Windows.Forms.ListBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.branches_create_Province = new System.Windows.Forms.ComboBox();
+            this.employees_create_Province = new System.Windows.Forms.ComboBox();
+            this.customers_create_DOB = new System.Windows.Forms.DateTimePicker();
+            this.employees_create_BID = new System.Windows.Forms.ListBox();
+            this.tabControl10 = new System.Windows.Forms.TabControl();
+            this.types_create = new System.Windows.Forms.TabPage();
+            this.types_search = new System.Windows.Forms.TabPage();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.types_create_Make = new System.Windows.Forms.TextBox();
+            this.types_create_BodyType = new System.Windows.Forms.TextBox();
+            this.types_create_Model = new System.Windows.Forms.TextBox();
+            this.types_create_submitbtn = new System.Windows.Forms.Button();
+            this.rentals_create_DateOut = new System.Windows.Forms.DateTimePicker();
+            this.rentals_create_DateIn = new System.Windows.Forms.DateTimePicker();
+            this.rentals_create_RentedBranch = new System.Windows.Forms.ListBox();
+            this.rentals_create_Vehicle = new System.Windows.Forms.ListBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.rates_create_Name = new System.Windows.Forms.TextBox();
+            this.rates_create_Daily = new System.Windows.Forms.NumericUpDown();
+            this.rates_create_Weekly = new System.Windows.Forms.NumericUpDown();
+            this.rates_create_Monthly = new System.Windows.Forms.NumericUpDown();
+            this.types_create_RateID = new System.Windows.Forms.ListBox();
+            this.label64 = new System.Windows.Forms.Label();
             eIDLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -226,6 +247,7 @@
             this.tabControl1.SuspendLayout();
             this.newRental.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.rentals_create.SuspendLayout();
             this.cars.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.cars_create.SuspendLayout();
@@ -256,10 +278,10 @@
             this.fees.SuspendLayout();
             this.tabControl7.SuspendLayout();
             this.fees_create.SuspendLayout();
-            this.rentalfees.SuspendLayout();
+            this.rates.SuspendLayout();
             this.tabControl9.SuspendLayout();
-            this.rentalfees_create.SuspendLayout();
-            this.rentalfees_search.SuspendLayout();
+            this.rates_create.SuspendLayout();
+            this.rates_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rental_fees_dataTable)).BeginInit();
             this.status.SuspendLayout();
             this.tabControl8.SuspendLayout();
@@ -269,6 +291,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource3)).BeginInit();
+            this.tabControl10.SuspendLayout();
+            this.types_create.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rates_create_Daily)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rates_create_Weekly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rates_create_Monthly)).BeginInit();
             this.SuspendLayout();
             // 
             // eIDLabel
@@ -369,13 +396,13 @@
             this.tabControl1.Controls.Add(this.customers);
             this.tabControl1.Controls.Add(this.employees);
             this.tabControl1.Controls.Add(this.fees);
-            this.tabControl1.Controls.Add(this.rentalfees);
+            this.tabControl1.Controls.Add(this.rates);
             this.tabControl1.Controls.Add(this.status);
             this.tabControl1.Controls.Add(this.types);
             this.tabControl1.Location = new System.Drawing.Point(2, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(752, 349);
+            this.tabControl1.Size = new System.Drawing.Size(762, 371);
             this.tabControl1.TabIndex = 0;
             // 
             // newRental
@@ -384,7 +411,7 @@
             this.newRental.Location = new System.Drawing.Point(4, 22);
             this.newRental.Name = "newRental";
             this.newRental.Padding = new System.Windows.Forms.Padding(3);
-            this.newRental.Size = new System.Drawing.Size(744, 323);
+            this.newRental.Size = new System.Drawing.Size(754, 345);
             this.newRental.TabIndex = 0;
             this.newRental.Text = "Rentals";
             this.newRental.UseVisualStyleBackColor = true;
@@ -401,6 +428,14 @@
             // 
             // rentals_create
             // 
+            this.rentals_create.Controls.Add(this.label63);
+            this.rentals_create.Controls.Add(this.label62);
+            this.rentals_create.Controls.Add(this.label61);
+            this.rentals_create.Controls.Add(this.label60);
+            this.rentals_create.Controls.Add(this.rentals_create_Vehicle);
+            this.rentals_create.Controls.Add(this.rentals_create_RentedBranch);
+            this.rentals_create.Controls.Add(this.rentals_create_DateIn);
+            this.rentals_create.Controls.Add(this.rentals_create_DateOut);
             this.rentals_create.Location = new System.Drawing.Point(4, 22);
             this.rentals_create.Name = "rentals_create";
             this.rentals_create.Padding = new System.Windows.Forms.Padding(3);
@@ -425,7 +460,7 @@
             this.cars.Location = new System.Drawing.Point(4, 22);
             this.cars.Name = "cars";
             this.cars.Padding = new System.Windows.Forms.Padding(3);
-            this.cars.Size = new System.Drawing.Size(744, 323);
+            this.cars.Size = new System.Drawing.Size(754, 345);
             this.cars.TabIndex = 1;
             this.cars.Text = "Cars";
             this.cars.UseVisualStyleBackColor = true;
@@ -442,7 +477,9 @@
             // 
             // cars_create
             // 
-            this.cars_create.Controls.Add(this.cars_create_BranchID);
+            this.cars_create.Controls.Add(this.cars_create_Status);
+            this.cars_create.Controls.Add(this.label56);
+            this.cars_create.Controls.Add(this.cars_create_CurrentBID);
             this.cars_create.Controls.Add(this.cars_create_TypeID);
             this.cars_create.Controls.Add(this.cars_create_Mileage);
             this.cars_create.Controls.Add(this.cars_create_VIN);
@@ -461,14 +498,14 @@
             // 
             // cars_create_Mileage
             // 
-            this.cars_create_Mileage.Location = new System.Drawing.Point(334, 71);
+            this.cars_create_Mileage.Location = new System.Drawing.Point(307, 168);
             this.cars_create_Mileage.Name = "cars_create_Mileage";
             this.cars_create_Mileage.Size = new System.Drawing.Size(153, 20);
             this.cars_create_Mileage.TabIndex = 64;
             // 
             // cars_create_VIN
             // 
-            this.cars_create_VIN.Location = new System.Drawing.Point(334, 29);
+            this.cars_create_VIN.Location = new System.Drawing.Point(307, 142);
             this.cars_create_VIN.Name = "cars_create_VIN";
             this.cars_create_VIN.Size = new System.Drawing.Size(153, 20);
             this.cars_create_VIN.TabIndex = 63;
@@ -495,7 +532,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(245, 74);
+            this.label27.Location = new System.Drawing.Point(251, 171);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(44, 13);
             this.label27.TabIndex = 37;
@@ -504,7 +541,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(264, 29);
+            this.label28.Location = new System.Drawing.Point(251, 145);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(25, 13);
             this.label28.TabIndex = 36;
@@ -629,7 +666,7 @@
             this.branches.Controls.Add(this.tabControl6);
             this.branches.Location = new System.Drawing.Point(4, 22);
             this.branches.Name = "branches";
-            this.branches.Size = new System.Drawing.Size(744, 323);
+            this.branches.Size = new System.Drawing.Size(754, 345);
             this.branches.TabIndex = 2;
             this.branches.Text = "Branch";
             this.branches.UseVisualStyleBackColor = true;
@@ -646,12 +683,12 @@
             // 
             // branches_create
             // 
+            this.branches_create.Controls.Add(this.branches_create_Province);
             this.branches_create.Controls.Add(this.branches_create_Phone1);
             this.branches_create.Controls.Add(this.label4);
             this.branches_create.Controls.Add(this.branches_create_submitbtn);
             this.branches_create.Controls.Add(this.branches_create_Address2);
             this.branches_create.Controls.Add(this.branches_create_City);
-            this.branches_create.Controls.Add(this.branches_create_Province);
             this.branches_create.Controls.Add(this.branches_create_PostalCode);
             this.branches_create.Controls.Add(this.branches_create_Address1);
             this.branches_create.Controls.Add(this.branches_create_Name);
@@ -710,14 +747,6 @@
             this.branches_create_City.Size = new System.Drawing.Size(153, 20);
             this.branches_create_City.TabIndex = 4;
             this.branches_create_City.Text = "Edmonton";
-            // 
-            // branches_create_Province
-            // 
-            this.branches_create_Province.Location = new System.Drawing.Point(321, 133);
-            this.branches_create_Province.Name = "branches_create_Province";
-            this.branches_create_Province.Size = new System.Drawing.Size(153, 20);
-            this.branches_create_Province.TabIndex = 5;
-            this.branches_create_Province.Text = "AB";
             // 
             // branches_create_PostalCode
             // 
@@ -942,7 +971,7 @@
             this.customers.Controls.Add(this.tabControl3);
             this.customers.Location = new System.Drawing.Point(4, 22);
             this.customers.Name = "customers";
-            this.customers.Size = new System.Drawing.Size(744, 323);
+            this.customers.Size = new System.Drawing.Size(754, 345);
             this.customers.TabIndex = 4;
             this.customers.Text = "Customers";
             this.customers.UseVisualStyleBackColor = true;
@@ -959,6 +988,7 @@
             // 
             // customers_create
             // 
+            this.customers_create.Controls.Add(this.customers_create_DOB);
             this.customers_create.Controls.Add(this.customers_create_Province);
             this.customers_create.Controls.Add(this.customers_create_submitbtn);
             this.customers_create.Controls.Add(this.customers_create_Address2);
@@ -966,7 +996,6 @@
             this.customers_create.Controls.Add(this.customers_create_PostalCode);
             this.customers_create.Controls.Add(this.customers_create_Address1);
             this.customers_create.Controls.Add(this.customers_create_CC);
-            this.customers_create.Controls.Add(this.customers_create_DOB);
             this.customers_create.Controls.Add(this.customers_create_DLN);
             this.customers_create.Controls.Add(this.customers_create_Phone2);
             this.customers_create.Controls.Add(this.customers_create_Phone1);
@@ -995,10 +1024,10 @@
             // customers_create_Province
             // 
             this.customers_create_Province.FormattingEnabled = true;
-            this.customers_create_Province.Location = new System.Drawing.Point(417, 106);
+            this.customers_create_Province.Location = new System.Drawing.Point(482, 106);
             this.customers_create_Province.Name = "customers_create_Province";
-            this.customers_create_Province.Size = new System.Drawing.Size(153, 21);
-            this.customers_create_Province.TabIndex = 42;
+            this.customers_create_Province.Size = new System.Drawing.Size(208, 21);
+            this.customers_create_Province.TabIndex = 11;
             this.customers_create_Province.Tag = "Province, nullable";
             // 
             // customers_create_submitbtn
@@ -1013,79 +1042,72 @@
             // 
             // customers_create_Address2
             // 
-            this.customers_create_Address2.Location = new System.Drawing.Point(417, 54);
+            this.customers_create_Address2.Location = new System.Drawing.Point(482, 54);
             this.customers_create_Address2.Name = "customers_create_Address2";
-            this.customers_create_Address2.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_Address2.Size = new System.Drawing.Size(208, 20);
             this.customers_create_Address2.TabIndex = 9;
             // 
             // customers_create_City
             // 
-            this.customers_create_City.Location = new System.Drawing.Point(417, 80);
+            this.customers_create_City.Location = new System.Drawing.Point(482, 80);
             this.customers_create_City.Name = "customers_create_City";
-            this.customers_create_City.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_City.Size = new System.Drawing.Size(208, 20);
             this.customers_create_City.TabIndex = 10;
             // 
             // customers_create_PostalCode
             // 
-            this.customers_create_PostalCode.Location = new System.Drawing.Point(417, 135);
+            this.customers_create_PostalCode.Location = new System.Drawing.Point(482, 135);
             this.customers_create_PostalCode.Name = "customers_create_PostalCode";
-            this.customers_create_PostalCode.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_PostalCode.Size = new System.Drawing.Size(208, 20);
             this.customers_create_PostalCode.TabIndex = 12;
             // 
             // customers_create_Address1
             // 
-            this.customers_create_Address1.Location = new System.Drawing.Point(417, 28);
+            this.customers_create_Address1.Location = new System.Drawing.Point(482, 28);
             this.customers_create_Address1.Name = "customers_create_Address1";
-            this.customers_create_Address1.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_Address1.Size = new System.Drawing.Size(208, 20);
             this.customers_create_Address1.TabIndex = 8;
             // 
             // customers_create_CC
             // 
             this.customers_create_CC.Location = new System.Drawing.Point(166, 184);
             this.customers_create_CC.Name = "customers_create_CC";
-            this.customers_create_CC.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_CC.Size = new System.Drawing.Size(200, 20);
             this.customers_create_CC.TabIndex = 7;
-            // 
-            // customers_create_DOB
-            // 
-            this.customers_create_DOB.Location = new System.Drawing.Point(166, 158);
-            this.customers_create_DOB.Name = "customers_create_DOB";
-            this.customers_create_DOB.Size = new System.Drawing.Size(153, 20);
-            this.customers_create_DOB.TabIndex = 6;
             // 
             // customers_create_DLN
             // 
             this.customers_create_DLN.Location = new System.Drawing.Point(166, 132);
             this.customers_create_DLN.Name = "customers_create_DLN";
-            this.customers_create_DLN.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_DLN.Size = new System.Drawing.Size(200, 20);
             this.customers_create_DLN.TabIndex = 5;
             // 
             // customers_create_Phone2
             // 
             this.customers_create_Phone2.Location = new System.Drawing.Point(166, 106);
             this.customers_create_Phone2.Name = "customers_create_Phone2";
-            this.customers_create_Phone2.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_Phone2.Size = new System.Drawing.Size(200, 20);
             this.customers_create_Phone2.TabIndex = 4;
             // 
             // customers_create_Phone1
             // 
             this.customers_create_Phone1.Location = new System.Drawing.Point(166, 80);
             this.customers_create_Phone1.Name = "customers_create_Phone1";
-            this.customers_create_Phone1.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_Phone1.Size = new System.Drawing.Size(200, 20);
             this.customers_create_Phone1.TabIndex = 3;
             // 
             // customers_create_LastName
             // 
             this.customers_create_LastName.Location = new System.Drawing.Point(166, 54);
             this.customers_create_LastName.Name = "customers_create_LastName";
-            this.customers_create_LastName.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_LastName.Size = new System.Drawing.Size(200, 20);
             this.customers_create_LastName.TabIndex = 2;
             // 
             // customers_create_FirstName
             // 
             this.customers_create_FirstName.Location = new System.Drawing.Point(166, 28);
             this.customers_create_FirstName.Name = "customers_create_FirstName";
-            this.customers_create_FirstName.Size = new System.Drawing.Size(153, 20);
+            this.customers_create_FirstName.Size = new System.Drawing.Size(200, 20);
             this.customers_create_FirstName.TabIndex = 1;
             // 
             // label12
@@ -1100,7 +1122,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(335, 138);
+            this.label15.Location = new System.Drawing.Point(400, 138);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(64, 13);
             this.label15.TabIndex = 40;
@@ -1145,7 +1167,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(335, 109);
+            this.label21.Location = new System.Drawing.Point(400, 109);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(49, 13);
             this.label21.TabIndex = 34;
@@ -1154,7 +1176,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(335, 83);
+            this.label22.Location = new System.Drawing.Point(400, 83);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(24, 13);
             this.label22.TabIndex = 33;
@@ -1163,7 +1185,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(334, 57);
+            this.label23.Location = new System.Drawing.Point(399, 57);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(77, 13);
             this.label23.TabIndex = 32;
@@ -1172,7 +1194,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(334, 31);
+            this.label24.Location = new System.Drawing.Point(399, 31);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(77, 13);
             this.label24.TabIndex = 31;
@@ -1351,7 +1373,7 @@
             this.employees.Controls.Add(this.tabControl4);
             this.employees.Location = new System.Drawing.Point(4, 22);
             this.employees.Name = "employees";
-            this.employees.Size = new System.Drawing.Size(744, 323);
+            this.employees.Size = new System.Drawing.Size(754, 345);
             this.employees.TabIndex = 5;
             this.employees.Text = "Employees";
             this.employees.UseVisualStyleBackColor = true;
@@ -1369,11 +1391,11 @@
             // employees_create
             // 
             this.employees_create.Controls.Add(this.employees_create_BID);
+            this.employees_create.Controls.Add(this.employees_create_Province);
             this.employees_create.Controls.Add(this.label1);
             this.employees_create.Controls.Add(this.employees_create_submitbtn);
             this.employees_create.Controls.Add(this.employees_create_Address2);
             this.employees_create.Controls.Add(this.employees_create_City);
-            this.employees_create.Controls.Add(this.employees_create_Province);
             this.employees_create.Controls.Add(this.employees_create_PostalCode);
             this.employees_create.Controls.Add(this.employees_create_Address1);
             this.employees_create.Controls.Add(this.employees_create_Phone2);
@@ -1397,18 +1419,10 @@
             this.employees_create.Text = "Create Employee";
             this.employees_create.UseVisualStyleBackColor = true;
             // 
-            // employees_create_BID
-            // 
-            this.employees_create_BID.Location = new System.Drawing.Point(166, 135);
-            this.employees_create_BID.Name = "employees_create_BID";
-            this.employees_create_BID.Size = new System.Drawing.Size(153, 20);
-            this.employees_create_BID.TabIndex = 5;
-            this.employees_create_BID.Text = "12";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 138);
+            this.label1.Location = new System.Drawing.Point(31, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 56;
@@ -1416,7 +1430,7 @@
             // 
             // employees_create_submitbtn
             // 
-            this.employees_create_submitbtn.Location = new System.Drawing.Point(324, 230);
+            this.employees_create_submitbtn.Location = new System.Drawing.Point(325, 245);
             this.employees_create_submitbtn.Name = "employees_create_submitbtn";
             this.employees_create_submitbtn.Size = new System.Drawing.Size(75, 23);
             this.employees_create_submitbtn.TabIndex = 30;
@@ -1426,30 +1440,22 @@
             // 
             // employees_create_Address2
             // 
-            this.employees_create_Address2.Location = new System.Drawing.Point(417, 54);
+            this.employees_create_Address2.Location = new System.Drawing.Point(529, 148);
             this.employees_create_Address2.Name = "employees_create_Address2";
             this.employees_create_Address2.Size = new System.Drawing.Size(153, 20);
             this.employees_create_Address2.TabIndex = 7;
             // 
             // employees_create_City
             // 
-            this.employees_create_City.Location = new System.Drawing.Point(417, 80);
+            this.employees_create_City.Location = new System.Drawing.Point(529, 174);
             this.employees_create_City.Name = "employees_create_City";
             this.employees_create_City.Size = new System.Drawing.Size(153, 20);
             this.employees_create_City.TabIndex = 8;
             this.employees_create_City.Text = "Hobbiton";
             // 
-            // employees_create_Province
-            // 
-            this.employees_create_Province.Location = new System.Drawing.Point(417, 106);
-            this.employees_create_Province.Name = "employees_create_Province";
-            this.employees_create_Province.Size = new System.Drawing.Size(153, 20);
-            this.employees_create_Province.TabIndex = 9;
-            this.employees_create_Province.Text = "GR";
-            // 
             // employees_create_PostalCode
             // 
-            this.employees_create_PostalCode.Location = new System.Drawing.Point(417, 135);
+            this.employees_create_PostalCode.Location = new System.Drawing.Point(529, 229);
             this.employees_create_PostalCode.Name = "employees_create_PostalCode";
             this.employees_create_PostalCode.Size = new System.Drawing.Size(153, 20);
             this.employees_create_PostalCode.TabIndex = 10;
@@ -1457,7 +1463,7 @@
             // 
             // employees_create_Address1
             // 
-            this.employees_create_Address1.Location = new System.Drawing.Point(417, 28);
+            this.employees_create_Address1.Location = new System.Drawing.Point(529, 122);
             this.employees_create_Address1.Name = "employees_create_Address1";
             this.employees_create_Address1.Size = new System.Drawing.Size(153, 20);
             this.employees_create_Address1.TabIndex = 6;
@@ -1465,14 +1471,14 @@
             // 
             // employees_create_Phone2
             // 
-            this.employees_create_Phone2.Location = new System.Drawing.Point(166, 106);
+            this.employees_create_Phone2.Location = new System.Drawing.Point(531, 93);
             this.employees_create_Phone2.Name = "employees_create_Phone2";
             this.employees_create_Phone2.Size = new System.Drawing.Size(153, 20);
             this.employees_create_Phone2.TabIndex = 4;
             // 
             // employees_create_Phone1
             // 
-            this.employees_create_Phone1.Location = new System.Drawing.Point(166, 80);
+            this.employees_create_Phone1.Location = new System.Drawing.Point(531, 67);
             this.employees_create_Phone1.Name = "employees_create_Phone1";
             this.employees_create_Phone1.Size = new System.Drawing.Size(153, 20);
             this.employees_create_Phone1.TabIndex = 3;
@@ -1480,7 +1486,7 @@
             // 
             // employees_create_LastName
             // 
-            this.employees_create_LastName.Location = new System.Drawing.Point(166, 54);
+            this.employees_create_LastName.Location = new System.Drawing.Point(531, 41);
             this.employees_create_LastName.Name = "employees_create_LastName";
             this.employees_create_LastName.Size = new System.Drawing.Size(153, 20);
             this.employees_create_LastName.TabIndex = 2;
@@ -1488,7 +1494,7 @@
             // 
             // employees_create_FirstName
             // 
-            this.employees_create_FirstName.Location = new System.Drawing.Point(166, 28);
+            this.employees_create_FirstName.Location = new System.Drawing.Point(531, 15);
             this.employees_create_FirstName.Name = "employees_create_FirstName";
             this.employees_create_FirstName.Size = new System.Drawing.Size(153, 20);
             this.employees_create_FirstName.TabIndex = 1;
@@ -1497,7 +1503,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(335, 138);
+            this.label2.Location = new System.Drawing.Point(366, 229);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 40;
@@ -1506,7 +1512,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 109);
+            this.label5.Location = new System.Drawing.Point(366, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 37;
@@ -1515,7 +1521,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 83);
+            this.label6.Location = new System.Drawing.Point(366, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 36;
@@ -1524,7 +1530,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(335, 109);
+            this.label7.Location = new System.Drawing.Point(366, 199);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 34;
@@ -1533,7 +1539,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(335, 83);
+            this.label8.Location = new System.Drawing.Point(366, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 13);
             this.label8.TabIndex = 33;
@@ -1542,7 +1548,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(334, 57);
+            this.label9.Location = new System.Drawing.Point(366, 148);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 32;
@@ -1551,7 +1557,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(334, 31);
+            this.label10.Location = new System.Drawing.Point(366, 122);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 13);
             this.label10.TabIndex = 31;
@@ -1560,7 +1566,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 57);
+            this.label11.Location = new System.Drawing.Point(366, 41);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 30;
@@ -1569,7 +1575,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(25, 28);
+            this.label13.Location = new System.Drawing.Point(366, 15);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 13);
             this.label13.TabIndex = 29;
@@ -1741,7 +1747,7 @@
             this.fees.Controls.Add(this.tabControl7);
             this.fees.Location = new System.Drawing.Point(4, 22);
             this.fees.Name = "fees";
-            this.fees.Size = new System.Drawing.Size(744, 323);
+            this.fees.Size = new System.Drawing.Size(754, 345);
             this.fees.TabIndex = 3;
             this.fees.Text = "Fees";
             this.fees.UseVisualStyleBackColor = true;
@@ -1823,128 +1829,92 @@
             this.fees_search.Text = "Search";
             this.fees_search.UseVisualStyleBackColor = true;
             // 
-            // rentalfees
+            // rates
             // 
-            this.rentalfees.Controls.Add(this.tabControl9);
-            this.rentalfees.Location = new System.Drawing.Point(4, 22);
-            this.rentalfees.Name = "rentalfees";
-            this.rentalfees.Size = new System.Drawing.Size(744, 323);
-            this.rentalfees.TabIndex = 6;
-            this.rentalfees.Text = "Rental Fees";
-            this.rentalfees.UseVisualStyleBackColor = true;
+            this.rates.Controls.Add(this.tabControl9);
+            this.rates.Location = new System.Drawing.Point(4, 22);
+            this.rates.Name = "rates";
+            this.rates.Size = new System.Drawing.Size(754, 345);
+            this.rates.TabIndex = 6;
+            this.rates.Text = "Rates";
+            this.rates.UseVisualStyleBackColor = true;
             // 
             // tabControl9
             // 
-            this.tabControl9.Controls.Add(this.rentalfees_create);
-            this.tabControl9.Controls.Add(this.rentalfees_search);
+            this.tabControl9.Controls.Add(this.rates_create);
+            this.tabControl9.Controls.Add(this.rates_search);
             this.tabControl9.Location = new System.Drawing.Point(-2, -2);
             this.tabControl9.Name = "tabControl9";
             this.tabControl9.SelectedIndex = 0;
             this.tabControl9.Size = new System.Drawing.Size(748, 327);
             this.tabControl9.TabIndex = 1;
             // 
-            // rentalfees_create
+            // rates_create
             // 
-            this.rentalfees_create.Controls.Add(this.label44);
-            this.rentalfees_create.Controls.Add(this.rentalfees_create_Weekly);
-            this.rentalfees_create.Controls.Add(this.label43);
-            this.rentalfees_create.Controls.Add(this.rentalfees_create_Monthly);
-            this.rentalfees_create.Controls.Add(this.label41);
-            this.rentalfees_create.Controls.Add(this.rentalfees_create_Daily);
-            this.rentalfees_create.Controls.Add(this.label42);
-            this.rentalfees_create.Controls.Add(this.rentalfees_create_TID);
-            this.rentalfees_create.Controls.Add(this.rentalfees_create_submitbtn);
-            this.rentalfees_create.Location = new System.Drawing.Point(4, 22);
-            this.rentalfees_create.Name = "rentalfees_create";
-            this.rentalfees_create.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalfees_create.Size = new System.Drawing.Size(740, 301);
-            this.rentalfees_create.TabIndex = 0;
-            this.rentalfees_create.Text = "Create Rental Fee";
-            this.rentalfees_create.UseVisualStyleBackColor = true;
+            this.rates_create.Controls.Add(this.rates_create_Monthly);
+            this.rates_create.Controls.Add(this.rates_create_Weekly);
+            this.rates_create.Controls.Add(this.rates_create_Daily);
+            this.rates_create.Controls.Add(this.label42);
+            this.rates_create.Controls.Add(this.rates_create_Name);
+            this.rates_create.Controls.Add(this.label44);
+            this.rates_create.Controls.Add(this.label43);
+            this.rates_create.Controls.Add(this.label41);
+            this.rates_create.Controls.Add(this.rates_create_submitbtn);
+            this.rates_create.Location = new System.Drawing.Point(4, 22);
+            this.rates_create.Name = "rates_create";
+            this.rates_create.Padding = new System.Windows.Forms.Padding(3);
+            this.rates_create.Size = new System.Drawing.Size(740, 301);
+            this.rates_create.TabIndex = 0;
+            this.rates_create.Text = "Create Rate";
+            this.rates_create.UseVisualStyleBackColor = true;
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(238, 114);
+            this.label44.Location = new System.Drawing.Point(276, 147);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(43, 13);
             this.label44.TabIndex = 73;
             this.label44.Text = "Weekly";
             // 
-            // rentalfees_create_Weekly
-            // 
-            this.rentalfees_create_Weekly.Location = new System.Drawing.Point(305, 111);
-            this.rentalfees_create_Weekly.Name = "rentalfees_create_Weekly";
-            this.rentalfees_create_Weekly.Size = new System.Drawing.Size(153, 20);
-            this.rentalfees_create_Weekly.TabIndex = 3;
-            // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(238, 140);
+            this.label43.Location = new System.Drawing.Point(276, 173);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(44, 13);
             this.label43.TabIndex = 71;
             this.label43.Text = "Monthly";
             // 
-            // rentalfees_create_Monthly
-            // 
-            this.rentalfees_create_Monthly.Location = new System.Drawing.Point(305, 137);
-            this.rentalfees_create_Monthly.Name = "rentalfees_create_Monthly";
-            this.rentalfees_create_Monthly.Size = new System.Drawing.Size(153, 20);
-            this.rentalfees_create_Monthly.TabIndex = 4;
-            // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(238, 88);
+            this.label41.Location = new System.Drawing.Point(276, 121);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(30, 13);
             this.label41.TabIndex = 67;
             this.label41.Text = "Daily";
             // 
-            // rentalfees_create_Daily
+            // rates_create_submitbtn
             // 
-            this.rentalfees_create_Daily.Location = new System.Drawing.Point(305, 85);
-            this.rentalfees_create_Daily.Name = "rentalfees_create_Daily";
-            this.rentalfees_create_Daily.Size = new System.Drawing.Size(153, 20);
-            this.rentalfees_create_Daily.TabIndex = 2;
+            this.rates_create_submitbtn.Location = new System.Drawing.Point(343, 233);
+            this.rates_create_submitbtn.Name = "rates_create_submitbtn";
+            this.rates_create_submitbtn.Size = new System.Drawing.Size(75, 23);
+            this.rates_create_submitbtn.TabIndex = 30;
+            this.rates_create_submitbtn.Text = "Submit";
+            this.rates_create_submitbtn.UseVisualStyleBackColor = true;
+            this.rates_create_submitbtn.Click += new System.EventHandler(this.rates_create_submitbtn_Click);
             // 
-            // label42
+            // rates_search
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(238, 62);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(31, 13);
-            this.label42.TabIndex = 69;
-            this.label42.Text = "Type";
-            // 
-            // rentalfees_create_TID
-            // 
-            this.rentalfees_create_TID.Location = new System.Drawing.Point(305, 59);
-            this.rentalfees_create_TID.Name = "rentalfees_create_TID";
-            this.rentalfees_create_TID.Size = new System.Drawing.Size(153, 20);
-            this.rentalfees_create_TID.TabIndex = 1;
-            // 
-            // rentalfees_create_submitbtn
-            // 
-            this.rentalfees_create_submitbtn.Location = new System.Drawing.Point(343, 233);
-            this.rentalfees_create_submitbtn.Name = "rentalfees_create_submitbtn";
-            this.rentalfees_create_submitbtn.Size = new System.Drawing.Size(75, 23);
-            this.rentalfees_create_submitbtn.TabIndex = 30;
-            this.rentalfees_create_submitbtn.Text = "Submit";
-            this.rentalfees_create_submitbtn.UseVisualStyleBackColor = true;
-            // 
-            // rentalfees_search
-            // 
-            this.rentalfees_search.Controls.Add(this.Rental_fees_dataTable);
-            this.rentalfees_search.Location = new System.Drawing.Point(4, 22);
-            this.rentalfees_search.Name = "rentalfees_search";
-            this.rentalfees_search.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalfees_search.Size = new System.Drawing.Size(740, 301);
-            this.rentalfees_search.TabIndex = 1;
-            this.rentalfees_search.Text = "Search";
-            this.rentalfees_search.UseVisualStyleBackColor = true;
+            this.rates_search.Controls.Add(this.Rental_fees_dataTable);
+            this.rates_search.Location = new System.Drawing.Point(4, 22);
+            this.rates_search.Name = "rates_search";
+            this.rates_search.Padding = new System.Windows.Forms.Padding(3);
+            this.rates_search.Size = new System.Drawing.Size(740, 301);
+            this.rates_search.TabIndex = 1;
+            this.rates_search.Text = "Search";
+            this.rates_search.UseVisualStyleBackColor = true;
             // 
             // Rental_fees_dataTable
             // 
@@ -1961,7 +1931,7 @@
             this.status.Controls.Add(this.tabControl8);
             this.status.Location = new System.Drawing.Point(4, 22);
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(744, 323);
+            this.status.Size = new System.Drawing.Size(754, 345);
             this.status.TabIndex = 7;
             this.status.Text = "Status";
             this.status.UseVisualStyleBackColor = true;
@@ -2030,18 +2000,10 @@
             this.types.Controls.Add(this.tabControl10);
             this.types.Location = new System.Drawing.Point(4, 22);
             this.types.Name = "types";
-            this.types.Size = new System.Drawing.Size(744, 323);
+            this.types.Size = new System.Drawing.Size(754, 345);
             this.types.TabIndex = 8;
             this.types.Text = "Vehicle Types";
             this.types.UseVisualStyleBackColor = true;
-            // 
-            // tabControl10
-            // 
-            this.tabControl10.Location = new System.Drawing.Point(-2, -2);
-            this.tabControl10.Name = "tabControl10";
-            this.tabControl10.SelectedIndex = 0;
-            this.tabControl10.Size = new System.Drawing.Size(748, 327);
-            this.tabControl10.TabIndex = 2;
             // 
             // cars_create_TypeID
             // 
@@ -2052,14 +2014,298 @@
             this.cars_create_TypeID.Sorted = true;
             this.cars_create_TypeID.TabIndex = 65;
             // 
-            // cars_create_BranchID
+            // cars_create_CurrentBID
             // 
-            this.cars_create_BranchID.FormattingEnabled = true;
-            this.cars_create_BranchID.Location = new System.Drawing.Point(68, 145);
-            this.cars_create_BranchID.Name = "cars_create_BranchID";
-            this.cars_create_BranchID.Size = new System.Drawing.Size(120, 95);
-            this.cars_create_BranchID.Sorted = true;
-            this.cars_create_BranchID.TabIndex = 66;
+            this.cars_create_CurrentBID.FormattingEnabled = true;
+            this.cars_create_CurrentBID.Location = new System.Drawing.Point(68, 145);
+            this.cars_create_CurrentBID.Name = "cars_create_CurrentBID";
+            this.cars_create_CurrentBID.Size = new System.Drawing.Size(120, 95);
+            this.cars_create_CurrentBID.Sorted = true;
+            this.cars_create_CurrentBID.TabIndex = 66;
+            // 
+            // cars_create_Status
+            // 
+            this.cars_create_Status.FormattingEnabled = true;
+            this.cars_create_Status.Location = new System.Drawing.Point(307, 29);
+            this.cars_create_Status.Name = "cars_create_Status";
+            this.cars_create_Status.Size = new System.Drawing.Size(120, 95);
+            this.cars_create_Status.Sorted = true;
+            this.cars_create_Status.TabIndex = 68;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(258, 29);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(37, 13);
+            this.label56.TabIndex = 67;
+            this.label56.Text = "Status";
+            // 
+            // branches_create_Province
+            // 
+            this.branches_create_Province.FormattingEnabled = true;
+            this.branches_create_Province.Location = new System.Drawing.Point(321, 133);
+            this.branches_create_Province.Name = "branches_create_Province";
+            this.branches_create_Province.Size = new System.Drawing.Size(153, 21);
+            this.branches_create_Province.TabIndex = 57;
+            this.branches_create_Province.Tag = "Province, nullable";
+            // 
+            // employees_create_Province
+            // 
+            this.employees_create_Province.FormattingEnabled = true;
+            this.employees_create_Province.Location = new System.Drawing.Point(529, 199);
+            this.employees_create_Province.Name = "employees_create_Province";
+            this.employees_create_Province.Size = new System.Drawing.Size(153, 21);
+            this.employees_create_Province.TabIndex = 57;
+            this.employees_create_Province.Tag = "Province, nullable";
+            // 
+            // customers_create_DOB
+            // 
+            this.customers_create_DOB.Location = new System.Drawing.Point(166, 158);
+            this.customers_create_DOB.Name = "customers_create_DOB";
+            this.customers_create_DOB.Size = new System.Drawing.Size(200, 20);
+            this.customers_create_DOB.TabIndex = 6;
+            // 
+            // employees_create_BID
+            // 
+            this.employees_create_BID.FormattingEnabled = true;
+            this.employees_create_BID.Location = new System.Drawing.Point(78, 22);
+            this.employees_create_BID.Name = "employees_create_BID";
+            this.employees_create_BID.Size = new System.Drawing.Size(148, 121);
+            this.employees_create_BID.Sorted = true;
+            this.employees_create_BID.TabIndex = 67;
+            // 
+            // tabControl10
+            // 
+            this.tabControl10.Controls.Add(this.types_create);
+            this.tabControl10.Controls.Add(this.types_search);
+            this.tabControl10.Location = new System.Drawing.Point(0, 0);
+            this.tabControl10.Name = "tabControl10";
+            this.tabControl10.SelectedIndex = 0;
+            this.tabControl10.Size = new System.Drawing.Size(758, 349);
+            this.tabControl10.TabIndex = 0;
+            // 
+            // types_create
+            // 
+            this.types_create.Controls.Add(this.label64);
+            this.types_create.Controls.Add(this.types_create_RateID);
+            this.types_create.Controls.Add(this.types_create_submitbtn);
+            this.types_create.Controls.Add(this.types_create_Model);
+            this.types_create.Controls.Add(this.types_create_BodyType);
+            this.types_create.Controls.Add(this.types_create_Make);
+            this.types_create.Controls.Add(this.label59);
+            this.types_create.Controls.Add(this.label58);
+            this.types_create.Controls.Add(this.label57);
+            this.types_create.Location = new System.Drawing.Point(4, 22);
+            this.types_create.Name = "types_create";
+            this.types_create.Padding = new System.Windows.Forms.Padding(3);
+            this.types_create.Size = new System.Drawing.Size(750, 323);
+            this.types_create.TabIndex = 0;
+            this.types_create.Text = "Create";
+            this.types_create.UseVisualStyleBackColor = true;
+            // 
+            // types_search
+            // 
+            this.types_search.Location = new System.Drawing.Point(4, 22);
+            this.types_search.Name = "types_search";
+            this.types_search.Padding = new System.Windows.Forms.Padding(3);
+            this.types_search.Size = new System.Drawing.Size(750, 323);
+            this.types_search.TabIndex = 1;
+            this.types_search.Text = "Search";
+            this.types_search.UseVisualStyleBackColor = true;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(227, 99);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(34, 13);
+            this.label57.TabIndex = 0;
+            this.label57.Text = "Make";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(227, 128);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(36, 13);
+            this.label58.TabIndex = 1;
+            this.label58.Text = "Model";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(227, 155);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(58, 13);
+            this.label59.TabIndex = 2;
+            this.label59.Text = "Body Type";
+            // 
+            // types_create_Make
+            // 
+            this.types_create_Make.Location = new System.Drawing.Point(310, 96);
+            this.types_create_Make.Name = "types_create_Make";
+            this.types_create_Make.Size = new System.Drawing.Size(100, 20);
+            this.types_create_Make.TabIndex = 1;
+            // 
+            // types_create_BodyType
+            // 
+            this.types_create_BodyType.Location = new System.Drawing.Point(310, 152);
+            this.types_create_BodyType.Name = "types_create_BodyType";
+            this.types_create_BodyType.Size = new System.Drawing.Size(100, 20);
+            this.types_create_BodyType.TabIndex = 3;
+            // 
+            // types_create_Model
+            // 
+            this.types_create_Model.Location = new System.Drawing.Point(310, 125);
+            this.types_create_Model.Name = "types_create_Model";
+            this.types_create_Model.Size = new System.Drawing.Size(100, 20);
+            this.types_create_Model.TabIndex = 2;
+            // 
+            // types_create_submitbtn
+            // 
+            this.types_create_submitbtn.Location = new System.Drawing.Point(319, 210);
+            this.types_create_submitbtn.Name = "types_create_submitbtn";
+            this.types_create_submitbtn.Size = new System.Drawing.Size(75, 23);
+            this.types_create_submitbtn.TabIndex = 30;
+            this.types_create_submitbtn.Text = "Submit";
+            this.types_create_submitbtn.UseVisualStyleBackColor = true;
+            this.types_create_submitbtn.Click += new System.EventHandler(this.types_create_submitbtn_Click);
+            // 
+            // rentals_create_DateOut
+            // 
+            this.rentals_create_DateOut.Location = new System.Drawing.Point(169, 33);
+            this.rentals_create_DateOut.Name = "rentals_create_DateOut";
+            this.rentals_create_DateOut.Size = new System.Drawing.Size(200, 20);
+            this.rentals_create_DateOut.TabIndex = 1;
+            // 
+            // rentals_create_DateIn
+            // 
+            this.rentals_create_DateIn.Location = new System.Drawing.Point(169, 71);
+            this.rentals_create_DateIn.Name = "rentals_create_DateIn";
+            this.rentals_create_DateIn.Size = new System.Drawing.Size(200, 20);
+            this.rentals_create_DateIn.TabIndex = 2;
+            // 
+            // rentals_create_RentedBranch
+            // 
+            this.rentals_create_RentedBranch.FormattingEnabled = true;
+            this.rentals_create_RentedBranch.Location = new System.Drawing.Point(134, 124);
+            this.rentals_create_RentedBranch.Name = "rentals_create_RentedBranch";
+            this.rentals_create_RentedBranch.Size = new System.Drawing.Size(120, 95);
+            this.rentals_create_RentedBranch.TabIndex = 2;
+            // 
+            // rentals_create_Vehicle
+            // 
+            this.rentals_create_Vehicle.FormattingEnabled = true;
+            this.rentals_create_Vehicle.Location = new System.Drawing.Point(373, 124);
+            this.rentals_create_Vehicle.Name = "rentals_create_Vehicle";
+            this.rentals_create_Vehicle.Size = new System.Drawing.Size(292, 95);
+            this.rentals_create_Vehicle.TabIndex = 3;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(36, 33);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(89, 13);
+            this.label60.TabIndex = 6;
+            this.label60.Text = "Rental Start Date";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(36, 71);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(99, 13);
+            this.label61.TabIndex = 7;
+            this.label61.Text = "Rental Return Date";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(36, 124);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(77, 13);
+            this.label62.TabIndex = 8;
+            this.label62.Text = "Pickup Branch";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(310, 124);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(42, 13);
+            this.label63.TabIndex = 9;
+            this.label63.Text = "Vehicle";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(276, 95);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(35, 13);
+            this.label42.TabIndex = 75;
+            this.label42.Text = "Name";
+            // 
+            // rates_create_Name
+            // 
+            this.rates_create_Name.Location = new System.Drawing.Point(343, 92);
+            this.rates_create_Name.Name = "rates_create_Name";
+            this.rates_create_Name.Size = new System.Drawing.Size(153, 20);
+            this.rates_create_Name.TabIndex = 74;
+            // 
+            // rates_create_Daily
+            // 
+            this.rates_create_Daily.Location = new System.Drawing.Point(343, 121);
+            this.rates_create_Daily.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.rates_create_Daily.Name = "rates_create_Daily";
+            this.rates_create_Daily.Size = new System.Drawing.Size(153, 20);
+            this.rates_create_Daily.TabIndex = 76;
+            // 
+            // rates_create_Weekly
+            // 
+            this.rates_create_Weekly.Location = new System.Drawing.Point(343, 147);
+            this.rates_create_Weekly.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.rates_create_Weekly.Name = "rates_create_Weekly";
+            this.rates_create_Weekly.Size = new System.Drawing.Size(153, 20);
+            this.rates_create_Weekly.TabIndex = 77;
+            // 
+            // rates_create_Monthly
+            // 
+            this.rates_create_Monthly.Location = new System.Drawing.Point(343, 173);
+            this.rates_create_Monthly.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.rates_create_Monthly.Name = "rates_create_Monthly";
+            this.rates_create_Monthly.Size = new System.Drawing.Size(153, 20);
+            this.rates_create_Monthly.TabIndex = 78;
+            // 
+            // types_create_RateID
+            // 
+            this.types_create_RateID.FormattingEnabled = true;
+            this.types_create_RateID.Location = new System.Drawing.Point(561, 96);
+            this.types_create_RateID.Name = "types_create_RateID";
+            this.types_create_RateID.Size = new System.Drawing.Size(120, 95);
+            this.types_create_RateID.TabIndex = 31;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(493, 99);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(30, 13);
+            this.label64.TabIndex = 32;
+            this.label64.Text = "Rate";
             // 
             // Main
             // 
@@ -2072,6 +2318,8 @@
             this.tabControl1.ResumeLayout(false);
             this.newRental.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.rentals_create.ResumeLayout(false);
+            this.rentals_create.PerformLayout();
             this.cars.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
             this.cars_create.ResumeLayout(false);
@@ -2111,11 +2359,11 @@
             this.tabControl7.ResumeLayout(false);
             this.fees_create.ResumeLayout(false);
             this.fees_create.PerformLayout();
-            this.rentalfees.ResumeLayout(false);
+            this.rates.ResumeLayout(false);
             this.tabControl9.ResumeLayout(false);
-            this.rentalfees_create.ResumeLayout(false);
-            this.rentalfees_create.PerformLayout();
-            this.rentalfees_search.ResumeLayout(false);
+            this.rates_create.ResumeLayout(false);
+            this.rates_create.PerformLayout();
+            this.rates_search.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rental_fees_dataTable)).EndInit();
             this.status.ResumeLayout(false);
             this.tabControl8.ResumeLayout(false);
@@ -2126,6 +2374,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource3)).EndInit();
+            this.tabControl10.ResumeLayout(false);
+            this.types_create.ResumeLayout(false);
+            this.types_create.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rates_create_Daily)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rates_create_Weekly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rates_create_Monthly)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2150,7 +2404,6 @@
         private System.Windows.Forms.TextBox customers_create_PostalCode;
         private System.Windows.Forms.TextBox customers_create_Address1;
         private System.Windows.Forms.TextBox customers_create_CC;
-        private System.Windows.Forms.TextBox customers_create_DOB;
         private System.Windows.Forms.TextBox customers_create_DLN;
         private System.Windows.Forms.TextBox customers_create_Phone2;
         private System.Windows.Forms.TextBox customers_create_Phone1;
@@ -2174,7 +2427,6 @@
         private System.Windows.Forms.Button employees_create_submitbtn;
         private System.Windows.Forms.TextBox employees_create_Address2;
         private System.Windows.Forms.TextBox employees_create_City;
-        private System.Windows.Forms.TextBox employees_create_Province;
         private System.Windows.Forms.TextBox employees_create_PostalCode;
         private System.Windows.Forms.TextBox employees_create_Address1;
         private System.Windows.Forms.TextBox employees_create_Phone2;
@@ -2191,7 +2443,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabPage employees_search;
-        private System.Windows.Forms.TextBox employees_create_BID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl5;
         private System.Windows.Forms.TabPage cars_create;
@@ -2206,7 +2457,6 @@
         private System.Windows.Forms.Button branches_create_submitbtn;
         private System.Windows.Forms.TextBox branches_create_Address2;
         private System.Windows.Forms.TextBox branches_create_City;
-        private System.Windows.Forms.TextBox branches_create_Province;
         private System.Windows.Forms.TextBox branches_create_PostalCode;
         private System.Windows.Forms.TextBox branches_create_Address1;
         private System.Windows.Forms.TextBox branches_create_Name;
@@ -2235,7 +2485,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vINDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mileageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn currentBIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TabPage rentalfees;
+        private System.Windows.Forms.TabPage rates;
         private System.Windows.Forms.TabPage status;
         private System.Windows.Forms.TextBox cars_create_Mileage;
         private System.Windows.Forms.TextBox cars_create_VIN;
@@ -2254,19 +2504,13 @@
         private System.Windows.Forms.Button status_create_submitbtn;
         private System.Windows.Forms.TabPage status_search;
         private System.Windows.Forms.TabControl tabControl9;
-        private System.Windows.Forms.TabPage rentalfees_create;
+        private System.Windows.Forms.TabPage rates_create;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox rentalfees_create_Weekly;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox rentalfees_create_Monthly;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox rentalfees_create_Daily;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox rentalfees_create_TID;
-        private System.Windows.Forms.Button rentalfees_create_submitbtn;
-        private System.Windows.Forms.TabPage rentalfees_search;
+        private System.Windows.Forms.Button rates_create_submitbtn;
+        private System.Windows.Forms.TabPage rates_search;
         private System.Windows.Forms.TabPage types;
-        private System.Windows.Forms.TabControl tabControl10;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource customersBindingSource;
         private System.Windows.Forms.BindingSource branchesBindingSource;
@@ -2349,7 +2593,38 @@
         private System.Windows.Forms.TextBox branches_search_PostalCode;
         private System.Windows.Forms.TextBox branches_search_Name;
         private System.Windows.Forms.ListBox cars_create_TypeID;
-        private System.Windows.Forms.ListBox cars_create_BranchID;
+        private System.Windows.Forms.ListBox cars_create_CurrentBID;
+        private System.Windows.Forms.ListBox cars_create_Status;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.ComboBox branches_create_Province;
+        private System.Windows.Forms.ComboBox employees_create_Province;
+        private System.Windows.Forms.DateTimePicker customers_create_DOB;
+        private System.Windows.Forms.ListBox employees_create_BID;
+        private System.Windows.Forms.TabControl tabControl10;
+        private System.Windows.Forms.TabPage types_create;
+        private System.Windows.Forms.Button types_create_submitbtn;
+        private System.Windows.Forms.TextBox types_create_Model;
+        private System.Windows.Forms.TextBox types_create_BodyType;
+        private System.Windows.Forms.TextBox types_create_Make;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TabPage types_search;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.ListBox rentals_create_Vehicle;
+        private System.Windows.Forms.ListBox rentals_create_RentedBranch;
+        private System.Windows.Forms.DateTimePicker rentals_create_DateIn;
+        private System.Windows.Forms.DateTimePicker rentals_create_DateOut;
+        private System.Windows.Forms.NumericUpDown rates_create_Monthly;
+        private System.Windows.Forms.NumericUpDown rates_create_Weekly;
+        private System.Windows.Forms.NumericUpDown rates_create_Daily;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox rates_create_Name;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.ListBox types_create_RateID;
     }
 }
 
