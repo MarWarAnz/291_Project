@@ -42,8 +42,6 @@
             this.cars = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.cars_create = new System.Windows.Forms.TabPage();
-            this.cars_create_BranchID = new System.Windows.Forms.TextBox();
-            this.cars_create_TypeID = new System.Windows.Forms.TextBox();
             this.cars_create_Mileage = new System.Windows.Forms.TextBox();
             this.cars_create_VIN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,12 +51,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.cars_search = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mileageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currentBIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button5 = new System.Windows.Forms.Button();
             this.cars_search_BID = new System.Windows.Forms.TextBox();
@@ -101,14 +93,6 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.branches_search_Results = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address1DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address2DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provinceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postalCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone1DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone2DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customers = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
@@ -152,20 +136,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provinceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dLNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goldStarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employees = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
@@ -205,17 +175,7 @@
             this.firstNameComboBox = new System.Windows.Forms.ComboBox();
             this.eIDNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.employeesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fees = new System.Windows.Forms.TabPage();
             this.tabControl7 = new System.Windows.Forms.TabControl();
             this.fees_create = new System.Windows.Forms.TabPage();
@@ -252,6 +212,8 @@
             this.branchesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.cars_create_TypeID = new System.Windows.Forms.ListBox();
+            this.cars_create_BranchID = new System.Windows.Forms.ListBox();
             eIDLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -497,30 +459,16 @@
             this.cars_create.Text = "Create Car";
             this.cars_create.UseVisualStyleBackColor = true;
             // 
-            // cars_create_BranchID
-            // 
-            this.cars_create_BranchID.Location = new System.Drawing.Point(334, 143);
-            this.cars_create_BranchID.Name = "cars_create_BranchID";
-            this.cars_create_BranchID.Size = new System.Drawing.Size(153, 20);
-            this.cars_create_BranchID.TabIndex = 65;
-            // 
-            // cars_create_TypeID
-            // 
-            this.cars_create_TypeID.Location = new System.Drawing.Point(334, 65);
-            this.cars_create_TypeID.Name = "cars_create_TypeID";
-            this.cars_create_TypeID.Size = new System.Drawing.Size(153, 20);
-            this.cars_create_TypeID.TabIndex = 62;
-            // 
             // cars_create_Mileage
             // 
-            this.cars_create_Mileage.Location = new System.Drawing.Point(334, 117);
+            this.cars_create_Mileage.Location = new System.Drawing.Point(334, 71);
             this.cars_create_Mileage.Name = "cars_create_Mileage";
             this.cars_create_Mileage.Size = new System.Drawing.Size(153, 20);
             this.cars_create_Mileage.TabIndex = 64;
             // 
             // cars_create_VIN
             // 
-            this.cars_create_VIN.Location = new System.Drawing.Point(334, 91);
+            this.cars_create_VIN.Location = new System.Drawing.Point(334, 29);
             this.cars_create_VIN.Name = "cars_create_VIN";
             this.cars_create_VIN.Size = new System.Drawing.Size(153, 20);
             this.cars_create_VIN.TabIndex = 63;
@@ -528,7 +476,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(223, 146);
+            this.label3.Location = new System.Drawing.Point(19, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 56;
@@ -547,7 +495,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(223, 120);
+            this.label27.Location = new System.Drawing.Point(245, 74);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(44, 13);
             this.label27.TabIndex = 37;
@@ -556,7 +504,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(224, 94);
+            this.label28.Location = new System.Drawing.Point(264, 29);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(25, 13);
             this.label28.TabIndex = 36;
@@ -565,7 +513,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(224, 68);
+            this.label33.Location = new System.Drawing.Point(19, 29);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(31, 13);
             this.label33.TabIndex = 30;
@@ -595,54 +543,11 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.vIDDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.vINDataGridViewTextBoxColumn,
-            this.mileageDataGridViewTextBoxColumn,
-            this.currentBIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.vehicleBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(23, 128);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(644, 150);
             this.dataGridView1.TabIndex = 67;
-            // 
-            // vIDDataGridViewTextBoxColumn
-            // 
-            this.vIDDataGridViewTextBoxColumn.DataPropertyName = "VID";
-            this.vIDDataGridViewTextBoxColumn.HeaderText = "VID";
-            this.vIDDataGridViewTextBoxColumn.Name = "vIDDataGridViewTextBoxColumn";
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // vINDataGridViewTextBoxColumn
-            // 
-            this.vINDataGridViewTextBoxColumn.DataPropertyName = "VIN";
-            this.vINDataGridViewTextBoxColumn.HeaderText = "VIN";
-            this.vINDataGridViewTextBoxColumn.Name = "vINDataGridViewTextBoxColumn";
-            // 
-            // mileageDataGridViewTextBoxColumn
-            // 
-            this.mileageDataGridViewTextBoxColumn.DataPropertyName = "Mileage";
-            this.mileageDataGridViewTextBoxColumn.HeaderText = "Mileage";
-            this.mileageDataGridViewTextBoxColumn.Name = "mileageDataGridViewTextBoxColumn";
-            // 
-            // currentBIDDataGridViewTextBoxColumn
-            // 
-            this.currentBIDDataGridViewTextBoxColumn.DataPropertyName = "currentBID";
-            this.currentBIDDataGridViewTextBoxColumn.HeaderText = "currentBID";
-            this.currentBIDDataGridViewTextBoxColumn.Name = "currentBIDDataGridViewTextBoxColumn";
             // 
             // button5
             // 
@@ -1024,15 +929,6 @@
             this.branches_search_Results.AllowUserToOrderColumns = true;
             this.branches_search_Results.AutoGenerateColumns = false;
             this.branches_search_Results.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.branches_search_Results.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.address1DataGridViewTextBoxColumn1,
-            this.address2DataGridViewTextBoxColumn1,
-            this.cityDataGridViewTextBoxColumn1,
-            this.provinceDataGridViewTextBoxColumn1,
-            this.postalCodeDataGridViewTextBoxColumn1,
-            this.phone1DataGridViewTextBoxColumn1,
-            this.phone2DataGridViewTextBoxColumn1});
             this.branches_search_Results.DataSource = this.branchesBindingSource;
             this.branches_search_Results.Location = new System.Drawing.Point(5, 140);
             this.branches_search_Results.Margin = new System.Windows.Forms.Padding(2);
@@ -1040,55 +936,6 @@
             this.branches_search_Results.RowTemplate.Height = 24;
             this.branches_search_Results.Size = new System.Drawing.Size(706, 133);
             this.branches_search_Results.TabIndex = 0;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // address1DataGridViewTextBoxColumn1
-            // 
-            this.address1DataGridViewTextBoxColumn1.DataPropertyName = "Address1";
-            this.address1DataGridViewTextBoxColumn1.HeaderText = "Address1";
-            this.address1DataGridViewTextBoxColumn1.Name = "address1DataGridViewTextBoxColumn1";
-            this.address1DataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // address2DataGridViewTextBoxColumn1
-            // 
-            this.address2DataGridViewTextBoxColumn1.DataPropertyName = "Address2";
-            this.address2DataGridViewTextBoxColumn1.HeaderText = "Address2";
-            this.address2DataGridViewTextBoxColumn1.Name = "address2DataGridViewTextBoxColumn1";
-            // 
-            // cityDataGridViewTextBoxColumn1
-            // 
-            this.cityDataGridViewTextBoxColumn1.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn1.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn1.Name = "cityDataGridViewTextBoxColumn1";
-            // 
-            // provinceDataGridViewTextBoxColumn1
-            // 
-            this.provinceDataGridViewTextBoxColumn1.DataPropertyName = "Province";
-            this.provinceDataGridViewTextBoxColumn1.HeaderText = "Province";
-            this.provinceDataGridViewTextBoxColumn1.Name = "provinceDataGridViewTextBoxColumn1";
-            // 
-            // postalCodeDataGridViewTextBoxColumn1
-            // 
-            this.postalCodeDataGridViewTextBoxColumn1.DataPropertyName = "PostalCode";
-            this.postalCodeDataGridViewTextBoxColumn1.HeaderText = "PostalCode";
-            this.postalCodeDataGridViewTextBoxColumn1.Name = "postalCodeDataGridViewTextBoxColumn1";
-            // 
-            // phone1DataGridViewTextBoxColumn1
-            // 
-            this.phone1DataGridViewTextBoxColumn1.DataPropertyName = "Phone1";
-            this.phone1DataGridViewTextBoxColumn1.HeaderText = "Phone1";
-            this.phone1DataGridViewTextBoxColumn1.Name = "phone1DataGridViewTextBoxColumn1";
-            // 
-            // phone2DataGridViewTextBoxColumn1
-            // 
-            this.phone2DataGridViewTextBoxColumn1.DataPropertyName = "Phone2";
-            this.phone2DataGridViewTextBoxColumn1.HeaderText = "Phone2";
-            this.phone2DataGridViewTextBoxColumn1.Name = "phone2DataGridViewTextBoxColumn1";
             // 
             // customers
             // 
@@ -1152,6 +999,7 @@
             this.customers_create_Province.Name = "customers_create_Province";
             this.customers_create_Province.Size = new System.Drawing.Size(153, 21);
             this.customers_create_Province.TabIndex = 42;
+            this.customers_create_Province.Tag = "Province, nullable";
             // 
             // customers_create_submitbtn
             // 
@@ -1489,21 +1337,6 @@
             // 
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.address1DataGridViewTextBoxColumn,
-            this.address2DataGridViewTextBoxColumn,
-            this.cityDataGridViewTextBoxColumn,
-            this.provinceDataGridViewTextBoxColumn,
-            this.postalCodeDataGridViewTextBoxColumn,
-            this.cCDataGridViewTextBoxColumn,
-            this.dLNDataGridViewTextBoxColumn,
-            this.goldStarDataGridViewCheckBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.phone1DataGridViewTextBoxColumn,
-            this.phone2DataGridViewTextBoxColumn,
-            this.dOBDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.customersBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(2, 116);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
@@ -1511,93 +1344,6 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(736, 122);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // address1DataGridViewTextBoxColumn
-            // 
-            this.address1DataGridViewTextBoxColumn.DataPropertyName = "Address1";
-            this.address1DataGridViewTextBoxColumn.HeaderText = "Address1";
-            this.address1DataGridViewTextBoxColumn.Name = "address1DataGridViewTextBoxColumn";
-            // 
-            // address2DataGridViewTextBoxColumn
-            // 
-            this.address2DataGridViewTextBoxColumn.DataPropertyName = "Address2";
-            this.address2DataGridViewTextBoxColumn.HeaderText = "Address2";
-            this.address2DataGridViewTextBoxColumn.Name = "address2DataGridViewTextBoxColumn";
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            // 
-            // provinceDataGridViewTextBoxColumn
-            // 
-            this.provinceDataGridViewTextBoxColumn.DataPropertyName = "Province";
-            this.provinceDataGridViewTextBoxColumn.HeaderText = "Province";
-            this.provinceDataGridViewTextBoxColumn.Name = "provinceDataGridViewTextBoxColumn";
-            // 
-            // postalCodeDataGridViewTextBoxColumn
-            // 
-            this.postalCodeDataGridViewTextBoxColumn.DataPropertyName = "PostalCode";
-            this.postalCodeDataGridViewTextBoxColumn.HeaderText = "PostalCode";
-            this.postalCodeDataGridViewTextBoxColumn.Name = "postalCodeDataGridViewTextBoxColumn";
-            // 
-            // cCDataGridViewTextBoxColumn
-            // 
-            this.cCDataGridViewTextBoxColumn.DataPropertyName = "CC";
-            this.cCDataGridViewTextBoxColumn.HeaderText = "CC";
-            this.cCDataGridViewTextBoxColumn.Name = "cCDataGridViewTextBoxColumn";
-            this.cCDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dLNDataGridViewTextBoxColumn
-            // 
-            this.dLNDataGridViewTextBoxColumn.DataPropertyName = "DLN";
-            this.dLNDataGridViewTextBoxColumn.HeaderText = "DLN";
-            this.dLNDataGridViewTextBoxColumn.Name = "dLNDataGridViewTextBoxColumn";
-            this.dLNDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // goldStarDataGridViewCheckBoxColumn
-            // 
-            this.goldStarDataGridViewCheckBoxColumn.DataPropertyName = "GoldStar";
-            this.goldStarDataGridViewCheckBoxColumn.HeaderText = "GoldStar";
-            this.goldStarDataGridViewCheckBoxColumn.Name = "goldStarDataGridViewCheckBoxColumn";
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // phone1DataGridViewTextBoxColumn
-            // 
-            this.phone1DataGridViewTextBoxColumn.DataPropertyName = "Phone1";
-            this.phone1DataGridViewTextBoxColumn.HeaderText = "Phone1";
-            this.phone1DataGridViewTextBoxColumn.Name = "phone1DataGridViewTextBoxColumn";
-            // 
-            // phone2DataGridViewTextBoxColumn
-            // 
-            this.phone2DataGridViewTextBoxColumn.DataPropertyName = "Phone2";
-            this.phone2DataGridViewTextBoxColumn.HeaderText = "Phone2";
-            this.phone2DataGridViewTextBoxColumn.Name = "phone2DataGridViewTextBoxColumn";
-            // 
-            // dOBDataGridViewTextBoxColumn
-            // 
-            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
-            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
-            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
             // 
             // employees
             // 
@@ -1974,17 +1720,7 @@
             this.employeesDataGridView.AutoGenerateColumns = false;
             this.employeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn7,
-            this.EID,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
+            this.EID});
             this.employeesDataGridView.DataSource = this.employeesBindingSource;
             this.employeesDataGridView.Location = new System.Drawing.Point(2, 97);
             this.employeesDataGridView.Margin = new System.Windows.Forms.Padding(2);
@@ -1993,72 +1729,12 @@
             this.employeesDataGridView.Size = new System.Drawing.Size(716, 179);
             this.employeesDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "LastName";
-            this.dataGridViewTextBoxColumn12.HeaderText = "LastName";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "FirstName";
-            this.dataGridViewTextBoxColumn11.HeaderText = "FirstName";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "BID";
-            this.dataGridViewTextBoxColumn7.HeaderText = "BID";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
             // EID
             // 
             this.EID.DataPropertyName = "EID";
             this.EID.HeaderText = "EID";
             this.EID.Name = "EID";
             this.EID.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Address1";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Address1";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Address2";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Address2";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "City";
-            this.dataGridViewTextBoxColumn4.HeaderText = "City";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Province";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Province";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "PostalCode";
-            this.dataGridViewTextBoxColumn6.HeaderText = "PostalCode";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Phone1";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Phone1";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Phone2";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Phone2";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
             // fees
             // 
@@ -2367,6 +2043,24 @@
             this.tabControl10.Size = new System.Drawing.Size(748, 327);
             this.tabControl10.TabIndex = 2;
             // 
+            // cars_create_TypeID
+            // 
+            this.cars_create_TypeID.FormattingEnabled = true;
+            this.cars_create_TypeID.Location = new System.Drawing.Point(68, 29);
+            this.cars_create_TypeID.Name = "cars_create_TypeID";
+            this.cars_create_TypeID.Size = new System.Drawing.Size(120, 95);
+            this.cars_create_TypeID.Sorted = true;
+            this.cars_create_TypeID.TabIndex = 65;
+            // 
+            // cars_create_BranchID
+            // 
+            this.cars_create_BranchID.FormattingEnabled = true;
+            this.cars_create_BranchID.Location = new System.Drawing.Point(68, 145);
+            this.cars_create_BranchID.Name = "cars_create_BranchID";
+            this.cars_create_BranchID.Size = new System.Drawing.Size(120, 95);
+            this.cars_create_BranchID.Sorted = true;
+            this.cars_create_BranchID.TabIndex = 66;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2543,8 +2237,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn currentBIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage rentalfees;
         private System.Windows.Forms.TabPage status;
-        private System.Windows.Forms.TextBox cars_create_BranchID;
-        private System.Windows.Forms.TextBox cars_create_TypeID;
         private System.Windows.Forms.TextBox cars_create_Mileage;
         private System.Windows.Forms.TextBox cars_create_VIN;
         private System.Windows.Forms.TabControl tabControl7;
@@ -2656,6 +2348,8 @@
         private System.Windows.Forms.TextBox branches_search_City;
         private System.Windows.Forms.TextBox branches_search_PostalCode;
         private System.Windows.Forms.TextBox branches_search_Name;
+        private System.Windows.Forms.ListBox cars_create_TypeID;
+        private System.Windows.Forms.ListBox cars_create_BranchID;
     }
 }
 

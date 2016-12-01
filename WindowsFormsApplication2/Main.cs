@@ -15,6 +15,16 @@ namespace WindowsFormsApplication2 {
     public partial class Main : Form {
         public Main() {
             InitializeComponent();
+
+            string[] Provinces = { "", "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT" };
+            customers_create_Province.DataSource = Provinces;
+
+            Interaction interaction = new Interaction();
+
+            SqlCommand cmd = new SqlCommand("Select Model, TID from CarType");
+            interaction.search(cmd, cars_create_TypeID, "Model", "TID");
+            cmd = new SqlCommand("Select BID, Name from Branches");
+            interaction.search(cmd, cars_create_BranchID, "Name", "BID");
         }
 
         private void branches_create_submitbtn_Click(object sender, EventArgs e) {
@@ -23,8 +33,10 @@ namespace WindowsFormsApplication2 {
                 "VALUES (@Name, @Address1, @Address2, @City, @Province, @PostalCode, @Phone1)");
             Control[] fields = { branches_create_Name, branches_create_Address1, branches_create_Address2, branches_create_City, branches_create_Province, branches_create_PostalCode, branches_create_Phone1 };
             validation.types[] checkAs = { validation.types.Name, validation.types.Address, validation.types.Address, validation.types.City, validation.types.Province, validation.types.PostalCode, validation.types.Phone };
+            bool[] nullable = { false, false, true, false, false, false, false };
 
-            insert(cmd, fields, checkAs);
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
         }
 
         private void cars_create_submitbtn_Click(object sender, EventArgs e) {
@@ -33,8 +45,10 @@ namespace WindowsFormsApplication2 {
             "VALUES (@TypeID, @VIN, @Mileage, @BranchID, @FID)");
             Control[] fields = { cars_create_TypeID, cars_create_VIN, cars_create_Mileage, cars_create_BranchID };
             validation.types[] checkAs = { validation.types.Type, validation.types.VIN, validation.types.Mileage, validation.types.ID };
+            bool[] nullable = { false, false, false, false};
 
-            insert(cmd, fields, checkAs);
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
         }
 
         //DOB does not work
@@ -46,17 +60,22 @@ namespace WindowsFormsApplication2 {
             "VALUES (@FirstName, @LastName, @Phone1, @Phone2, @DLN, @DOB, @CC, @Address1, @Address2, @City, @Province, @PostalCode)");
             Control[] fields = { customers_create_FirstName, customers_create_LastName, customers_create_Phone1, customers_create_Phone2, customers_create_DLN, customers_create_DOB, customers_create_CC, customers_create_Address1, customers_create_Address2, customers_create_City, customers_create_Province, customers_create_PostalCode };
             validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Phone, validation.types.Phone, validation.types.DLN, validation.types.DOB, validation.types.CC, validation.types.Address, validation.types.Address, validation.types.City, validation.types.Province, validation.types.PostalCode };
+            bool[] nullable = { false, false, false, true, false, false, false, false, true, false, false, false };
 
-            insert(cmd, fields, checkAs);
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
         }
+
         private void employees_create_submitbtn_Click(object sender, EventArgs e) {
             SqlCommand cmd = new SqlCommand("INSERT INTO Employees " +
             "(FirstName, LastName, Phone1, Phone2, BID, Address1, Address2, City, Province, PostalCode)" +
             "VALUES (@FirstName, @LastName, @Phone1, @Phone2, @BID, @Address1, @Address2, @City, @Province, @PostalCode)");
+            bool[] nullable = { false, false, false, true, false, false, true, false, false, false };
             Control[] fields = { employees_create_FirstName, employees_create_LastName, employees_create_Phone1, employees_create_Phone2, employees_create_BID, employees_create_Address1, employees_create_Address2, employees_create_City, employees_create_Province, employees_create_PostalCode };
             validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Phone, validation.types.Phone, validation.types.ID, validation.types.Address, validation.types.Address, validation.types.City, validation.types.Province, validation.types.PostalCode };
 
-            insert(cmd, fields, checkAs);
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
         }
         //validation for "amount" must be created and implemented, replacing the use of CC here
         private void fees_create_submitbtn_Click(object sender, EventArgs e) {
@@ -65,59 +84,29 @@ namespace WindowsFormsApplication2 {
             "VALUES (@Name, @Cost)");
             Control[] fields = { fees_create_Name, fees_create_Cost };
             validation.types[] checkAs = { validation.types.Name, validation.types.CC };
+            bool[] nullable = { false, false};
 
-            insert(cmd, fields, checkAs);
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
         }
+
         private void status_create_submitbtn_Click(object sender, EventArgs e) {
             SqlCommand cmd = new SqlCommand("INSERT INTO Status " +
             "(Name)" +
             "VALUES (@Name)");
             Control[] fields = { status_create_Name };
             validation.types[] checkAs = { validation.types.Address };
-        }
+            bool[] nullable = { false };
 
-
-        private void insert(SqlCommand cmd, Control[] fields, validation.types[] checkAs) {
-            bool acceptable = true;
-            validation isValid = new validation();
-            for (int i = 0; i < fields.Length; i++) {
-                if (!isValid.validate(fields[i].Text, checkAs[i])) {
-                    fields[i].BackColor = Color.Tomato;
-                    acceptable = false;
-                }
-            }
-            if (acceptable == false)
-                return;
-            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT291_Project"].ConnectionString;
-            using (SqlConnection connection = new SqlConnection(connString)) {
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = connection;
-                for (int i = 0; i < fields.Length; i++) {
-                    int index = fields[i].Name.LastIndexOf('_');
-                    cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), fields[i].Text);
-                    fields[i].Text = "";
-                }
-                connection.Open();
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
         }
 
         private void branches_search_Submitbtn_Click(object sender, EventArgs e) {
             SqlCommand cmd = new SqlCommand("Select * from Branches");
-            search(cmd, branches_search_Results);
-        }
 
-        private void search(SqlCommand cmd, DataGridView display) {
-            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT291_Project"].ConnectionString;
-            using (SqlConnection connection = new SqlConnection(connString)) {
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = connection;
-                SqlDataAdapter data = new SqlDataAdapter(cmd);
-                DataTable results = new DataTable();
-                data.Fill(results);
-                display.DataSource = results;
-            }
+            Interaction interaction = new Interaction();
+            interaction.search(cmd, branches_search_Results);
         }
     }
 }

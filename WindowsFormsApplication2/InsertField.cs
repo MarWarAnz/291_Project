@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace WindowsFormsApplication2 {
-    class ProgramSetup {
-    }
+public class InsertField {
+    public validation.types type;
+    public bool nullable;
 }

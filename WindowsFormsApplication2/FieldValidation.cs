@@ -8,16 +8,16 @@ public class validation
         switch (type) {
             //alpha ONLY
             case types.Name:
-            for (int i = 0; i < str.Length; i++) {
-                if (!char.IsLetter(str[i]) && !char.IsPunctuation(str[i]) && str[i] != ' ')
-                        return false;
+                for (int i = 0; i < str.Length; i++) {
+                    if (!char.IsLetter(str[i]) && !char.IsPunctuation(str[i]) && str[i] != ' ')
+                            return false;
                 }
                 return true;
             case types.Province:
-                if (str.Length > 2)
+                if (str.Length > 30)
                     return false;
                 for (int i = 0; i < str.Length; i++)
-                    if (!char.IsLetter(str[i]))
+                    if (!char.IsLetter(str[i]) && str[i] != ' ')
                         return false;
                 return true;
             case types.City:
@@ -27,6 +27,8 @@ public class validation
                 return true;
             //numeric ONLY
             case types.Phone:
+                if (str.Length != 10)
+                    return false;
                 for (int i = 0; i < str.Length; i++)
                     if (!char.IsDigit(str[i]) && str[i] != '-')
                         return false;
@@ -48,10 +50,19 @@ public class validation
             case types.DLN:
             case types.DOB:
             case types.VIN:
-            case types.PostalCode:
                 for (int i = 0; i < str.Length; i++)
-                    if (!char.IsLetterOrDigit(str[i]))
+                    if (!char.IsDigit(str[i]))
                         return false;
+                return true;
+            case types.PostalCode:
+                for (int i = 0; i < str.Length; i++) {
+                    if (i % 2 == 0)
+                        if (!char.IsLetter(str[i]))
+                            return false;
+                        else if (!char.IsDigit(str[i]))
+                            return false;
+                    return true;
+                }
                 return true;
             //alphaNumeric plus Special Characters
             case types.Email:
