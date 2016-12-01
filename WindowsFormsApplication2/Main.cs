@@ -125,9 +125,9 @@ namespace WindowsFormsApplication2 {
             SqlCommand cmd = new SqlCommand("INSERT INTO Customers " +
             "(FirstName, LastName, Phone1, Phone2, DLN, DOB, CC, Address1, Address2, City, Province, PostalCode)" +
             "VALUES (@FirstName, @LastName, @Phone1, @Phone2, @DLN, @DOB, @CC, @Address1, @Address2, @City, @Province, @PostalCode)");
-            Control[] fields = { customers_create_FirstName, customers_create_LastName, customers_create_Phone1, customers_create_Phone2, customers_create_DLN, customers_create_DOB, customers_create_CC, customers_create_Address1, customers_create_Address2, customers_create_City, customers_create_Province, customers_create_PostalCode };
-            validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Phone, validation.types.Phone, validation.types.DLN, validation.types.DOB, validation.types.CC, validation.types.Address, validation.types.Address, validation.types.City, validation.types.Province, validation.types.PostalCode };
-            bool[] nullable = { false, false, false, true, false, false, false, false, true, false, false, false };
+            Control[] fields = { customers_create_FirstName, customers_create_LastName, customers_create_Phone1, customers_create_Phone2, customers_create_DLN, customers_create_DOB, customers_create_CC, customers_create_Address1, customers_create_Address2, customers_create_City, customers_create_Province, customers_create_PostalCode, customers_create_Username, customers_create_Password };
+            validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Phone, validation.types.Phone, validation.types.DLN, validation.types.DOB, validation.types.CC, validation.types.Address, validation.types.Address, validation.types.City, validation.types.Province, validation.types.PostalCode, validation.types.Email, validation.types.Email };
+            bool[] nullable = { false, false, false, true, false, false, false, false, true, false, false, false, true, true };
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
@@ -137,9 +137,9 @@ namespace WindowsFormsApplication2 {
             SqlCommand cmd = new SqlCommand("INSERT INTO Employees " +
             "(FirstName, LastName, Phone1, Phone2, BID, Address1, Address2, City, Province, PostalCode)" +
             "VALUES (@FirstName, @LastName, @Phone1, @Phone2, @BID, @Address1, @Address2, @City, @Province, @PostalCode)");
-            bool[] nullable = { false, false, false, true, false, false, true, false, false, false };
-            Control[] fields = { employees_create_FirstName, employees_create_LastName, employees_create_Phone1, employees_create_Phone2, employees_create_BID, employees_create_Address1, employees_create_Address2, employees_create_City, employees_create_Province, employees_create_PostalCode };
-            validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Phone, validation.types.Phone, validation.types.ID, validation.types.Address, validation.types.Address, validation.types.City, validation.types.Province, validation.types.PostalCode };
+            bool[] nullable = { false, false, false, true, false, false, true, false, false, false , true, true };
+            Control[] fields = { employees_create_FirstName, employees_create_LastName, employees_create_Phone1, employees_create_Phone2, employees_create_BID, employees_create_Address1, employees_create_Address2, employees_create_City, employees_create_Province, employees_create_PostalCode, employees_create_Username, employees_create_Password };
+            validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Phone, validation.types.Phone, validation.types.ID, validation.types.Address, validation.types.Address, validation.types.City, validation.types.Province, validation.types.PostalCode, validation.types.Email, validation.types.Email };
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
@@ -221,6 +221,17 @@ namespace WindowsFormsApplication2 {
         }
 
         private void rentals_pending_BranchID_SelectedIndexChanged(object sender, EventArgs e) {
+            PopulatePendingMenus();
+        }
+
+        private void rentals_pending_submitbtn_Click(object sender, EventArgs e) {
+            if (rentals_pending_Pending.SelectedRows.Count < 0)
+                for (int i = 0; i < rentals_pending_Pending.SelectedRows.Count; i++) {
+                    SqlCommand cmd = new SqlCommand("UPDATE Transactions SET Pending = '0', Processed = '1' where TID = @TID");
+                    cmd.Parameters.AddWithValue("@TID", rentals_pending_Pending.SelectedRows[i].Cells[1].Value);
+                    Interaction interaction = new Interaction();
+                    interaction.execute(cmd);
+                }
             PopulatePendingMenus();
         }
     }

@@ -50,7 +50,16 @@ public class Interaction
             }
             connection.Open();
             cmd.ExecuteNonQuery();
-            connection.Close();
+        }
+    }
+
+    public void execute(SqlCommand cmd) {
+        string connString = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT291_Project"].ConnectionString;
+        using (SqlConnection connection = new SqlConnection(connString)) {
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = connection;
+            connection.Open();
+            cmd.ExecuteNonQuery();
         }
     }
 

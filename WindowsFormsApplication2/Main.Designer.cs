@@ -38,6 +38,9 @@
             this.newRental = new System.Windows.Forms.TabPage();
             this.rentals = new System.Windows.Forms.TabControl();
             this.rentals_create = new System.Windows.Forms.TabPage();
+            this.rentals_create_CID = new System.Windows.Forms.ListBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.rentals_create_submitbtn = new System.Windows.Forms.Button();
             this.label63 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
@@ -47,6 +50,12 @@
             this.rentals_create_DateIn = new System.Windows.Forms.DateTimePicker();
             this.rentals_create_DateOut = new System.Windows.Forms.DateTimePicker();
             this.rentals_search = new System.Windows.Forms.TabPage();
+            this.rentals_pending = new System.Windows.Forms.TabPage();
+            this.rentals_pending_submitbtn = new System.Windows.Forms.Button();
+            this.rentals_pending_BranchID = new System.Windows.Forms.ListBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.rentals_pending_Pending = new System.Windows.Forms.DataGridView();
+            this.rentals_return = new System.Windows.Forms.TabPage();
             this.cars = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.cars_create = new System.Windows.Forms.TabPage();
@@ -109,6 +118,8 @@
             this.customers = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.customers_create = new System.Windows.Forms.TabPage();
+            this.customers_create_Username = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
             this.customers_create_DOB = new System.Windows.Forms.DateTimePicker();
             this.customers_create_Province = new System.Windows.Forms.ComboBox();
             this.customers_create_submitbtn = new System.Windows.Forms.Button();
@@ -235,14 +246,12 @@
             this.branchesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.rentals_create_submitbtn = new System.Windows.Forms.Button();
-            this.rentals_pending = new System.Windows.Forms.TabPage();
-            this.rentals_return = new System.Windows.Forms.TabPage();
-            this.rentals_pending_Pending = new System.Windows.Forms.DataGridView();
-            this.rentals_pending_BranchID = new System.Windows.Forms.ListBox();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.rentals_create_CID = new System.Windows.Forms.ListBox();
+            this.customers_create_Password = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.employees_create_Password = new System.Windows.Forms.TextBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.employees_create_Username = new System.Windows.Forms.TextBox();
+            this.label70 = new System.Windows.Forms.Label();
             eIDLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -256,6 +265,8 @@
             this.newRental.SuspendLayout();
             this.rentals.SuspendLayout();
             this.rentals_create.SuspendLayout();
+            this.rentals_pending.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentals_pending_Pending)).BeginInit();
             this.cars.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.cars_create.SuspendLayout();
@@ -304,8 +315,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource3)).BeginInit();
-            this.rentals_pending.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentals_pending_Pending)).BeginInit();
             this.SuspendLayout();
             // 
             // eIDLabel
@@ -459,10 +468,37 @@
             this.rentals_create.Text = "Create Rental";
             this.rentals_create.UseVisualStyleBackColor = true;
             // 
+            // rentals_create_CID
+            // 
+            this.rentals_create_CID.FormattingEnabled = true;
+            this.rentals_create_CID.Location = new System.Drawing.Point(119, 27);
+            this.rentals_create_CID.Name = "rentals_create_CID";
+            this.rentals_create_CID.Size = new System.Drawing.Size(153, 95);
+            this.rentals_create_CID.TabIndex = 12;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(36, 27);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(51, 13);
+            this.label66.TabIndex = 11;
+            this.label66.Text = "Customer";
+            // 
+            // rentals_create_submitbtn
+            // 
+            this.rentals_create_submitbtn.Location = new System.Drawing.Point(294, 239);
+            this.rentals_create_submitbtn.Name = "rentals_create_submitbtn";
+            this.rentals_create_submitbtn.Size = new System.Drawing.Size(75, 23);
+            this.rentals_create_submitbtn.TabIndex = 10;
+            this.rentals_create_submitbtn.Text = "Reserve";
+            this.rentals_create_submitbtn.UseVisualStyleBackColor = true;
+            this.rentals_create_submitbtn.Click += new System.EventHandler(this.rentals_create_submitbtn_Click);
+            // 
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(327, 115);
+            this.label63.Location = new System.Drawing.Point(349, 140);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(42, 13);
             this.label63.TabIndex = 9;
@@ -498,7 +534,7 @@
             // rentals_create_Vehicle
             // 
             this.rentals_create_Vehicle.FormattingEnabled = true;
-            this.rentals_create_Vehicle.Location = new System.Drawing.Point(386, 115);
+            this.rentals_create_Vehicle.Location = new System.Drawing.Point(416, 140);
             this.rentals_create_Vehicle.Name = "rentals_create_Vehicle";
             this.rentals_create_Vehicle.Size = new System.Drawing.Size(230, 95);
             this.rentals_create_Vehicle.TabIndex = 3;
@@ -506,9 +542,9 @@
             // rentals_create_RentedBranch
             // 
             this.rentals_create_RentedBranch.FormattingEnabled = true;
-            this.rentals_create_RentedBranch.Location = new System.Drawing.Point(152, 140);
+            this.rentals_create_RentedBranch.Location = new System.Drawing.Point(119, 140);
             this.rentals_create_RentedBranch.Name = "rentals_create_RentedBranch";
-            this.rentals_create_RentedBranch.Size = new System.Drawing.Size(120, 95);
+            this.rentals_create_RentedBranch.Size = new System.Drawing.Size(153, 95);
             this.rentals_create_RentedBranch.TabIndex = 2;
             this.rentals_create_RentedBranch.SelectedIndexChanged += new System.EventHandler(this.rentals_create_RentedBranch_SelectedIndexChanged);
             // 
@@ -535,6 +571,65 @@
             this.rentals_search.TabIndex = 1;
             this.rentals_search.Text = "Search";
             this.rentals_search.UseVisualStyleBackColor = true;
+            // 
+            // rentals_pending
+            // 
+            this.rentals_pending.Controls.Add(this.rentals_pending_submitbtn);
+            this.rentals_pending.Controls.Add(this.rentals_pending_BranchID);
+            this.rentals_pending.Controls.Add(this.label65);
+            this.rentals_pending.Controls.Add(this.rentals_pending_Pending);
+            this.rentals_pending.Location = new System.Drawing.Point(4, 22);
+            this.rentals_pending.Name = "rentals_pending";
+            this.rentals_pending.Size = new System.Drawing.Size(736, 297);
+            this.rentals_pending.TabIndex = 2;
+            this.rentals_pending.Text = "Pending";
+            this.rentals_pending.UseVisualStyleBackColor = true;
+            // 
+            // rentals_pending_submitbtn
+            // 
+            this.rentals_pending_submitbtn.Location = new System.Drawing.Point(67, 190);
+            this.rentals_pending_submitbtn.Name = "rentals_pending_submitbtn";
+            this.rentals_pending_submitbtn.Size = new System.Drawing.Size(75, 23);
+            this.rentals_pending_submitbtn.TabIndex = 30;
+            this.rentals_pending_submitbtn.Text = "Approve";
+            this.rentals_pending_submitbtn.UseVisualStyleBackColor = true;
+            this.rentals_pending_submitbtn.Click += new System.EventHandler(this.rentals_pending_submitbtn_Click);
+            // 
+            // rentals_pending_BranchID
+            // 
+            this.rentals_pending_BranchID.FormattingEnabled = true;
+            this.rentals_pending_BranchID.Location = new System.Drawing.Point(67, 14);
+            this.rentals_pending_BranchID.Name = "rentals_pending_BranchID";
+            this.rentals_pending_BranchID.Size = new System.Drawing.Size(120, 95);
+            this.rentals_pending_BranchID.Sorted = true;
+            this.rentals_pending_BranchID.TabIndex = 1;
+            this.rentals_pending_BranchID.SelectedIndexChanged += new System.EventHandler(this.rentals_pending_BranchID_SelectedIndexChanged);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(18, 14);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(41, 13);
+            this.label65.TabIndex = 67;
+            this.label65.Text = "Branch";
+            // 
+            // rentals_pending_Pending
+            // 
+            this.rentals_pending_Pending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentals_pending_Pending.Location = new System.Drawing.Point(292, 3);
+            this.rentals_pending_Pending.Name = "rentals_pending_Pending";
+            this.rentals_pending_Pending.Size = new System.Drawing.Size(441, 272);
+            this.rentals_pending_Pending.TabIndex = 0;
+            // 
+            // rentals_return
+            // 
+            this.rentals_return.Location = new System.Drawing.Point(4, 22);
+            this.rentals_return.Name = "rentals_return";
+            this.rentals_return.Size = new System.Drawing.Size(736, 297);
+            this.rentals_return.TabIndex = 3;
+            this.rentals_return.Text = "Return";
+            this.rentals_return.UseVisualStyleBackColor = true;
             // 
             // cars
             // 
@@ -1115,6 +1210,10 @@
             // 
             // customers_create
             // 
+            this.customers_create.Controls.Add(this.customers_create_Password);
+            this.customers_create.Controls.Add(this.label68);
+            this.customers_create.Controls.Add(this.customers_create_Username);
+            this.customers_create.Controls.Add(this.label67);
             this.customers_create.Controls.Add(this.customers_create_DOB);
             this.customers_create.Controls.Add(this.customers_create_Province);
             this.customers_create.Controls.Add(this.customers_create_submitbtn);
@@ -1148,6 +1247,22 @@
             this.customers_create.Text = "Create Customer";
             this.customers_create.UseVisualStyleBackColor = true;
             // 
+            // customers_create_Username
+            // 
+            this.customers_create_Username.Location = new System.Drawing.Point(482, 187);
+            this.customers_create_Username.Name = "customers_create_Username";
+            this.customers_create_Username.Size = new System.Drawing.Size(208, 20);
+            this.customers_create_Username.TabIndex = 13;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(400, 190);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(55, 13);
+            this.label67.TabIndex = 43;
+            this.label67.Text = "Username";
+            // 
             // customers_create_DOB
             // 
             this.customers_create_DOB.Location = new System.Drawing.Point(166, 158);
@@ -1166,7 +1281,7 @@
             // 
             // customers_create_submitbtn
             // 
-            this.customers_create_submitbtn.Location = new System.Drawing.Point(309, 234);
+            this.customers_create_submitbtn.Location = new System.Drawing.Point(320, 265);
             this.customers_create_submitbtn.Name = "customers_create_submitbtn";
             this.customers_create_submitbtn.Size = new System.Drawing.Size(75, 23);
             this.customers_create_submitbtn.TabIndex = 30;
@@ -1524,6 +1639,10 @@
             // 
             // employees_create
             // 
+            this.employees_create.Controls.Add(this.employees_create_Password);
+            this.employees_create.Controls.Add(this.label69);
+            this.employees_create.Controls.Add(this.employees_create_Username);
+            this.employees_create.Controls.Add(this.label70);
             this.employees_create.Controls.Add(this.employees_create_BID);
             this.employees_create.Controls.Add(this.employees_create_Province);
             this.employees_create.Controls.Add(this.label1);
@@ -1582,7 +1701,7 @@
             // 
             // employees_create_submitbtn
             // 
-            this.employees_create_submitbtn.Location = new System.Drawing.Point(325, 245);
+            this.employees_create_submitbtn.Location = new System.Drawing.Point(315, 255);
             this.employees_create_submitbtn.Name = "employees_create_submitbtn";
             this.employees_create_submitbtn.Size = new System.Drawing.Size(75, 23);
             this.employees_create_submitbtn.TabIndex = 30;
@@ -2323,80 +2442,53 @@
             this.types_search.Text = "Search";
             this.types_search.UseVisualStyleBackColor = true;
             // 
-            // rentals_create_submitbtn
+            // customers_create_Password
             // 
-            this.rentals_create_submitbtn.Location = new System.Drawing.Point(294, 239);
-            this.rentals_create_submitbtn.Name = "rentals_create_submitbtn";
-            this.rentals_create_submitbtn.Size = new System.Drawing.Size(75, 23);
-            this.rentals_create_submitbtn.TabIndex = 10;
-            this.rentals_create_submitbtn.Text = "Reserve";
-            this.rentals_create_submitbtn.UseVisualStyleBackColor = true;
-            this.rentals_create_submitbtn.Click += new System.EventHandler(this.rentals_create_submitbtn_Click);
+            this.customers_create_Password.Location = new System.Drawing.Point(482, 213);
+            this.customers_create_Password.Name = "customers_create_Password";
+            this.customers_create_Password.Size = new System.Drawing.Size(208, 20);
+            this.customers_create_Password.TabIndex = 14;
             // 
-            // rentals_pending
+            // label68
             // 
-            this.rentals_pending.Controls.Add(this.rentals_pending_BranchID);
-            this.rentals_pending.Controls.Add(this.label65);
-            this.rentals_pending.Controls.Add(this.rentals_pending_Pending);
-            this.rentals_pending.Location = new System.Drawing.Point(4, 22);
-            this.rentals_pending.Name = "rentals_pending";
-            this.rentals_pending.Size = new System.Drawing.Size(736, 297);
-            this.rentals_pending.TabIndex = 2;
-            this.rentals_pending.Text = "Pending";
-            this.rentals_pending.UseVisualStyleBackColor = true;
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(400, 216);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(53, 13);
+            this.label68.TabIndex = 45;
+            this.label68.Text = "Password";
             // 
-            // rentals_return
+            // employees_create_Password
             // 
-            this.rentals_return.Location = new System.Drawing.Point(4, 22);
-            this.rentals_return.Name = "rentals_return";
-            this.rentals_return.Size = new System.Drawing.Size(736, 297);
-            this.rentals_return.TabIndex = 3;
-            this.rentals_return.Text = "Return";
-            this.rentals_return.UseVisualStyleBackColor = true;
+            this.employees_create_Password.Location = new System.Drawing.Point(94, 200);
+            this.employees_create_Password.Name = "employees_create_Password";
+            this.employees_create_Password.Size = new System.Drawing.Size(208, 20);
+            this.employees_create_Password.TabIndex = 12;
             // 
-            // rentals_pending_Pending
+            // label69
             // 
-            this.rentals_pending_Pending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentals_pending_Pending.Location = new System.Drawing.Point(292, 3);
-            this.rentals_pending_Pending.Name = "rentals_pending_Pending";
-            this.rentals_pending_Pending.Size = new System.Drawing.Size(441, 272);
-            this.rentals_pending_Pending.TabIndex = 0;
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(12, 203);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(53, 13);
+            this.label69.TabIndex = 71;
+            this.label69.Text = "Password";
             // 
-            // rentals_pending_BranchID
+            // employees_create_Username
             // 
-            this.rentals_pending_BranchID.FormattingEnabled = true;
-            this.rentals_pending_BranchID.Location = new System.Drawing.Point(67, 14);
-            this.rentals_pending_BranchID.Name = "rentals_pending_BranchID";
-            this.rentals_pending_BranchID.Size = new System.Drawing.Size(120, 95);
-            this.rentals_pending_BranchID.Sorted = true;
-            this.rentals_pending_BranchID.TabIndex = 68;
-            this.rentals_pending_BranchID.SelectedIndexChanged += new System.EventHandler(this.rentals_pending_BranchID_SelectedIndexChanged);
+            this.employees_create_Username.Location = new System.Drawing.Point(94, 174);
+            this.employees_create_Username.Name = "employees_create_Username";
+            this.employees_create_Username.Size = new System.Drawing.Size(208, 20);
+            this.employees_create_Username.TabIndex = 11;
             // 
-            // label65
+            // label70
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(18, 14);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(41, 13);
-            this.label65.TabIndex = 67;
-            this.label65.Text = "Branch";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(36, 27);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(51, 13);
-            this.label66.TabIndex = 11;
-            this.label66.Text = "Customer";
-            // 
-            // rentals_create_CID
-            // 
-            this.rentals_create_CID.FormattingEnabled = true;
-            this.rentals_create_CID.Location = new System.Drawing.Point(152, 27);
-            this.rentals_create_CID.Name = "rentals_create_CID";
-            this.rentals_create_CID.Size = new System.Drawing.Size(120, 95);
-            this.rentals_create_CID.TabIndex = 12;
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(12, 177);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(55, 13);
+            this.label70.TabIndex = 70;
+            this.label70.Text = "Username";
             // 
             // Main
             // 
@@ -2411,6 +2503,9 @@
             this.rentals.ResumeLayout(false);
             this.rentals_create.ResumeLayout(false);
             this.rentals_create.PerformLayout();
+            this.rentals_pending.ResumeLayout(false);
+            this.rentals_pending.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentals_pending_Pending)).EndInit();
             this.cars.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
             this.cars_create.ResumeLayout(false);
@@ -2471,9 +2566,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource3)).EndInit();
-            this.rentals_pending.ResumeLayout(false);
-            this.rentals_pending.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentals_pending_Pending)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2727,6 +2819,15 @@
         private System.Windows.Forms.TabPage rentals_return;
         private System.Windows.Forms.ListBox rentals_create_CID;
         private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Button rentals_pending_submitbtn;
+        private System.Windows.Forms.TextBox customers_create_Username;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox customers_create_Password;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox employees_create_Password;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox employees_create_Username;
+        private System.Windows.Forms.Label label70;
     }
 }
 
