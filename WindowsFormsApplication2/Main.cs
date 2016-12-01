@@ -13,6 +13,11 @@ using System.Configuration;
 namespace WindowsFormsApplication2 {
 
     public partial class Main : Form {
+
+        enum permissions {Customer, Employee, Manager};
+        permissions userType = permissions.Customer;
+        int ID = 1;
+
         public Main() {
             InitializeComponent();
 
@@ -25,6 +30,21 @@ namespace WindowsFormsApplication2 {
             PopulateStatusMenus();
             PopulateBranchMenus();
             PopulateVehicleMenus();
+            PopulatePendingMenus();
+            PopulateCustomerMenus();
+        }
+
+        private void PopulateCustomerMenus() {
+            SqlCommand cmd;
+             if (userType == permissions.Employee || userType == permissions.Manager) {
+                cmd = new SqlCommand("Select Concat(FirstName, LastName) as Name, CID from Customers");
+            } else {
+                rentals_create_CID.Enabled = false;
+                cmd = new SqlCommand("Select Concat(FirstName, LastName) as Name, CID from Customers where CID = @CID");
+                cmd.Parameters.AddWithValue("@CID", ID);
+            }
+            Interaction interaction = new Interaction();
+            interaction.search(cmd, rentals_create_CID, "Name", "CID");
         }
 
         private void PopulateRateMenus() {
@@ -34,9 +54,12 @@ namespace WindowsFormsApplication2 {
         }
 
         private void PopulateVehicleMenus() {
-            SqlCommand cmd = new SqlCommand("SELECT CONCAT(Make, Model) as thisCar, VID FROM Vehicles INNER JOIN CarTypes ON Vehicles.TypeID = CarTypes.TID");
-            Interaction interaction = new Interaction();
-            interaction.search(cmd, rentals_create_Vehicle, "thisCar", "VID");
+            SqlCommand cmd = new SqlCommand("SELECT CONCAT(Make, Model) as thisCar, VID FROM Vehicles INNER JOIN CarTypes ON Vehicles.TypeID = CarTypes.TID WHERE CurrentBID = @BranchID");
+            if (!(rentals_create_RentedBranch.SelectedValue.ToString() == "System.Data.DataRowView")) {
+                cmd.Parameters.AddWithValue("@BranchID", rentals_create_RentedBranch.SelectedValue.ToString());
+                Interaction interaction = new Interaction();
+                interaction.search(cmd, rentals_create_Vehicle, "thisCar", "VID");
+            }
         }
 
         private void PopulateStatusMenus() {
@@ -51,6 +74,16 @@ namespace WindowsFormsApplication2 {
             interaction.search(cmd, cars_create_CurrentBID, "Name", "BID");
             interaction.search(cmd, employees_create_BID, "Name", "BID");
             interaction.search(cmd, rentals_create_RentedBranch, "Name", "BID");
+            interaction.search(cmd, rentals_pending_BranchID, "Name", "BID");
+        }
+
+        private void PopulatePendingMenus() {
+            SqlCommand cmd = new SqlCommand("Select * from Transactions where RentedBranch = @BranchID and Pending = 1");
+            if (!(rentals_pending_BranchID.SelectedValue.ToString() == "System.Data.DataRowView")) {
+                cmd.Parameters.AddWithValue("@BranchID", rentals_pending_BranchID.SelectedValue);
+                Interaction interaction = new Interaction();
+                interaction.search(cmd, rentals_pending_Pending);
+            }
         }
 
         private void PopulateCarTypeMenus() {
@@ -162,6 +195,20 @@ namespace WindowsFormsApplication2 {
             interaction.insert(cmd, fields, checkAs, nullable);
         }
 
+        //needs customer credentials from login, or selection if employee
+        //add validation rules for Date
+        private void rentals_create_submitbtn_Click(object sender, EventArgs e) {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Transactions " +
+                "(DateOut, DateIn, RentedBranch, CID, Vehicle)" +
+                "VALUES (@DateOut, @DateIn, @RentedBranch, @CID, @Vehicle)");
+            Control[] fields = { rentals_create_DateOut, rentals_create_DateIn, rentals_create_RentedBranch, rentals_create_CID, rentals_create_Vehicle};
+            validation.types[] checkAs = { validation.types.Address, validation.types.Address, validation.types.ID, validation.types.ID, validation.types.ID};
+            bool[] nullable = { false, false, false, false, false };
+
+            Interaction interaction = new Interaction();
+            interaction.insert(cmd, fields, checkAs, nullable);
+        }
+
         private void branches_search_Submitbtn_Click(object sender, EventArgs e) {
             SqlCommand cmd = new SqlCommand("Select * from Branches");
 
@@ -169,5 +216,12 @@ namespace WindowsFormsApplication2 {
             interaction.search(cmd, branches_search_Results);
         }
 
+        private void rentals_create_RentedBranch_SelectedIndexChanged(object sender, EventArgs e) {
+            PopulateVehicleMenus();
+        }
+
+        private void rentals_pending_BranchID_SelectedIndexChanged(object sender, EventArgs e) {
+            PopulatePendingMenus();
+        }
     }
 }

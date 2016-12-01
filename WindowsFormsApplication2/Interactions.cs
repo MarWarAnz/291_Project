@@ -18,13 +18,14 @@ public class Interaction
             if (nullable[i] == false && fields[i].Text.Length == 0) {
                 fields[i].BackColor = Color.Tomato;
                 accepted = false;
-            } 
-            if (fields[i] is TextBox || fields[i] is ComboBox || fields[i] is DateTimePicker || fields[i] is NumericUpDown) {
+            }
+            //validation currently not run on DateTimePickers as they cannot be empty
+            if (fields[i] is TextBox || fields[i] is ComboBox || fields[i] is NumericUpDown) {
                 if (!isValid.validate(fields[i].Text, checkAs[i])) {
                     fields[i].BackColor = Color.Tomato;
                     accepted = false;
                 }
-            } else if (fields [i] is ListBox) {
+            } else if (fields[i] is ListBox) {
                 if (!isValid.validate((fields[i] as ListBox).SelectedValue.ToString(), checkAs[i])) {
                     fields[i].BackColor = Color.Tomato;
                     accepted = false;
@@ -39,12 +40,12 @@ public class Interaction
             cmd.Connection = connection;
             for (int i = 0; i < fields.Length; i++) {
                 int index = fields[i].Name.LastIndexOf('_');
-                if (fields[i] is TextBox || fields[i] is ComboBox || fields[i] is DateTimePicker)
+                if (fields[i] is TextBox || fields[i] is ComboBox || fields[i] is NumericUpDown)
                     cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), fields[i].Text);
+                else if (fields[i] is DateTimePicker)
+                    cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), (fields[i] as DateTimePicker).Value.Date);
                 else if (fields[i] is ListBox)
                     cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), (fields[i] as ListBox).SelectedValue);
-                else if (fields[i] is NumericUpDown)
-                    cmd.Parameters.AddWithValue("@" + fields[i].Name.Substring(index + 1), fields[i].Text);
                 fields[i].Text = "";
             }
             connection.Open();
