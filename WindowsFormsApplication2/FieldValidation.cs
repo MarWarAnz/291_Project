@@ -3,7 +3,7 @@
 public class validation
 {
     //postal code and phone number could have additional separate validation rules that check for proper formatting
-    public enum types {Name, Phone, Address, Province, City, Email, DLN, DOB, CC, Type, VIN, Mileage, ID, PostalCode};
+    public enum types {Name, Phone, Address, Province, City, Email, DLN, DOB, CC, Type, VIN, Mileage, ID, PostalCode, Non};
     public bool validate(string str, types type) {
         switch (type) {
             //alpha ONLY

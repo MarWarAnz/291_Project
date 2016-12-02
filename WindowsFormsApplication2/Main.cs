@@ -25,6 +25,8 @@ namespace WindowsFormsApplication2 {
             customers_create_Province.DataSource = Provinces;
             branches_create_Province.DataSource = Provinces;
             employees_create_Province.DataSource = Provinces;
+            branches_search_Province.DataSource = Provinces;
+
 
             PopulateCarTypeMenus();
             PopulateStatusMenus();
@@ -33,6 +35,7 @@ namespace WindowsFormsApplication2 {
             PopulatePendingMenus();
             PopulateCustomerMenus();
             PopulateRateMenus();
+            branches_search_datagrideview_Populate();
         }
 
         private void PopulateCustomerMenus() {
@@ -106,6 +109,7 @@ namespace WindowsFormsApplication2 {
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
             PopulateBranchMenus();
+            branches_search_datagrideview_Populate();
         }
 
         private void cars_create_submitbtn_Click(object sender, EventArgs e) {
@@ -134,6 +138,7 @@ namespace WindowsFormsApplication2 {
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
+            PopulateCustomerMenus();
         }
 
         private void employees_create_submitbtn_Click(object sender, EventArgs e) {
@@ -149,7 +154,7 @@ namespace WindowsFormsApplication2 {
         }
         //validation for "amount" must be created and implemented, replacing the use of CC here
         private void fees_create_submitbtn_Click(object sender, EventArgs e) {
-            SqlCommand cmd = new SqlCommand("INSERT INTO AdditionalFees" +
+            SqlCommand cmd = new SqlCommand("INSERT INTO Fees" +
             "(Name, Cost)" +
             "VALUES (@Name, @Cost)");
             Control[] fields = { fees_create_Name, fees_create_Cost };
@@ -174,7 +179,7 @@ namespace WindowsFormsApplication2 {
         }
 
         private void types_create_submitbtn_Click(object sender, EventArgs e) {
-            SqlCommand cmd = new SqlCommand("INSERT INTO CarType " +
+            SqlCommand cmd = new SqlCommand("INSERT INTO CarTypes " +
                 "(Make, Model, BodyType, RateID)" +
                 "VALUES (@Make, @Model, @BodyType, @RateID)");
             Control[] fields = { types_create_Make, types_create_Model, types_create_BodyType, types_create_RateID };
@@ -213,13 +218,6 @@ namespace WindowsFormsApplication2 {
             interaction.insert(cmd, fields, checkAs, nullable);
         }
 
-        private void branches_search_Submitbtn_Click(object sender, EventArgs e) {
-            SqlCommand cmd = new SqlCommand("Select * from Branches");
-
-            Interaction interaction = new Interaction();
-            interaction.search(cmd, branches_search_Results);
-        }
-
         private void rentals_create_RentedBranch_SelectedIndexChanged(object sender, EventArgs e) {
             PopulateVehicleMenus();
         }
@@ -237,6 +235,129 @@ namespace WindowsFormsApplication2 {
                     interaction.execute(cmd);
                 }
             PopulatePendingMenus();
+        }
+
+        private void branches_search_datagrideview_Populate()
+        {
+            Interaction interaction = new Interaction();
+            SqlCommand cmd = new SqlCommand(
+               "SELECT [Name], [Address1], [Address2], [City], [Province], [PostalCode], [Phone1], [Phone2]" +
+               "FROM [CMPT291_Project].[dbo].[Branches]");
+            interaction.search(cmd, branches_search_Results);
+
+        }
+
+        private void rentals_search_datagrideview_Populate()
+        {
+            Interaction interaction = new Interaction();
+            SqlCommand cmd = new SqlCommand(
+                ""
+                );
+            interaction.search(cmd, rentals_search_Datagridview);
+
+        }
+
+        private void branches_search_Submitbtn_Click(object sender, EventArgs e)
+        {
+            string sql_Cmd =
+                "SELECT [Name], [Address1], [Address2], [City], [Province], [PostalCode], [Phone1], [Phone2]" +
+                "FROM [CMPT291_Project].[dbo].[Branches] ";
+
+            string[] sql_field = {"[Name]", "[City]", "[Province]", "[PostalCode]", "[Address1]", "[Phone1]", "[Address2]", "[Phone2]"};
+            Control[] fields = {branches_search_Name, branches_search_City, branches_search_Province, branches_search_PostalCode, branches_search_Address1, branches_search_Phonenumber};
+            validation.types[] types = {
+                validation.types.Name,
+                validation.types.City,
+                validation.types.Province,
+                validation.types.Non, // postalcode
+                validation.types.Address,
+                validation.types.Non, // phone
+            };
+
+            string where_sql_Cmd = form_sql_builder(sql_field, fields, types);
+
+            if (where_sql_Cmd != "")
+            {
+                sql_Cmd += where_sql_Cmd;
+            }
+
+            Console.WriteLine("sql comand: " + sql_Cmd);
+
+            SqlCommand cmd = new SqlCommand(sql_Cmd);
+            Interaction interaction = new Interaction();
+            interaction.search(cmd, branches_search_Results);
+        }
+
+        private string form_sql_builder(string[] sql_field, Control[] fields, validation.types[] types)
+        {
+            validation val = new validation();
+            string where_sql_Cmd = "";
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                if (fields[i].Text == "" || !val.validate(fields[i].Text, types[i]) || fields[i].Text == "0")
+                            continue;
+
+                if (where_sql_Cmd == "")
+                {
+                    if (fields[i] == branches_search_Address1 || fields[i] == branches_search_Phonenumber)
+                    {
+                        where_sql_Cmd += "WHERE (" + sql_field[i] + " LIKE '%" + fields[i].Text + "%' OR " +
+                            sql_field[i] + " LIKE '%" + fields[i].Text + "%') ";
+                    }
+                    else
+                    {
+                        where_sql_Cmd += "WHERE " + sql_field[i] + " LIKE '%" + fields[i].Text + "%' ";
+                    }
+                }
+                else
+                {
+                    if (fields[i] == branches_search_Address1 || fields[i] == branches_search_Phonenumber)
+                    {
+                        where_sql_Cmd += "AND (" + sql_field[i] + " LIKE '%" + fields[i].Text + "%' OR " +
+                                sql_field[i + 2] + " LIKE '%" + fields[i].Text + "%') ";
+                    }
+                    else
+                    {
+                        where_sql_Cmd += "AND " + sql_field[i] + " LIKE '%" + fields[i].Text + "%' ";
+                    }
+                }
+            } // end of for
+            return where_sql_Cmd;
+        }
+
+        private void branches_search_Refreshbtn_Click(object sender, EventArgs e)
+        {
+                    SqlCommand cmd = new SqlCommand("SELECT [Name], [Address1], [Address2], [City], [Province], [PostalCode], [Phone1], [Phone2]" +
+                        "FROM [CMPT291_Project].[dbo].[Branches]");
+                    Interaction interaction = new Interaction();
+                    interaction.search(cmd, branches_search_Results);
+
+        }
+
+        private void label62_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label66_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label63_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rentals_create_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
