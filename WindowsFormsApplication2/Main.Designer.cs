@@ -1629,12 +1629,15 @@
             // 
             // tabControl4
             // 
+            this.tabControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl4.Controls.Add(this.employees_create);
             this.tabControl4.Controls.Add(this.employees_search);
             this.tabControl4.Location = new System.Drawing.Point(0, 3);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(748, 324);
+            this.tabControl4.Size = new System.Drawing.Size(748, 342);
             this.tabControl4.TabIndex = 2;
             // 
             // employees_create
@@ -1667,7 +1670,7 @@
             this.employees_create.Location = new System.Drawing.Point(4, 22);
             this.employees_create.Name = "employees_create";
             this.employees_create.Padding = new System.Windows.Forms.Padding(3);
-            this.employees_create.Size = new System.Drawing.Size(740, 298);
+            this.employees_create.Size = new System.Drawing.Size(740, 316);
             this.employees_create.TabIndex = 0;
             this.employees_create.Text = "Create Employee";
             this.employees_create.UseVisualStyleBackColor = true;
@@ -1879,7 +1882,7 @@
             this.employees_search.Location = new System.Drawing.Point(4, 22);
             this.employees_search.Name = "employees_search";
             this.employees_search.Padding = new System.Windows.Forms.Padding(3);
-            this.employees_search.Size = new System.Drawing.Size(740, 298);
+            this.employees_search.Size = new System.Drawing.Size(740, 316);
             this.employees_search.TabIndex = 1;
             this.employees_search.Text = "Search";
             this.employees_search.UseVisualStyleBackColor = true;

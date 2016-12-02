@@ -32,6 +32,7 @@ namespace WindowsFormsApplication2 {
             PopulateVehicleMenus();
             PopulatePendingMenus();
             PopulateCustomerMenus();
+            PopulateRateMenus();
         }
 
         private void PopulateCustomerMenus() {
