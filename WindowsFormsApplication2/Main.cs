@@ -55,7 +55,9 @@ namespace WindowsFormsApplication2 {
 
         private void PopulateVehicleMenus() {
             SqlCommand cmd = new SqlCommand("SELECT CONCAT(Make, Model) as thisCar, VID FROM Vehicles INNER JOIN CarTypes ON Vehicles.TypeID = CarTypes.TID WHERE CurrentBID = @BranchID");
-            if (!(rentals_create_RentedBranch.SelectedValue.ToString() == "System.Data.DataRowView")) {
+            Console.WriteLine("here here " + rentals_create_RentedBranch.SelectedValue);
+            if ( !(rentals_create_RentedBranch.SelectedValue == null) && !(rentals_create_RentedBranch.SelectedValue.ToString() == "System.Data.DataRowView"))
+            {
                 cmd.Parameters.AddWithValue("@BranchID", rentals_create_RentedBranch.SelectedValue.ToString());
                 Interaction interaction = new Interaction();
                 interaction.search(cmd, rentals_create_Vehicle, "thisCar", "VID");
@@ -79,7 +81,7 @@ namespace WindowsFormsApplication2 {
 
         private void PopulatePendingMenus() {
             SqlCommand cmd = new SqlCommand("Select * from Transactions where RentedBranch = @BranchID and Pending = 1");
-            if (!(rentals_pending_BranchID.SelectedValue.ToString() == "System.Data.DataRowView")) {
+            if (!(rentals_pending_BranchID.SelectedValue == null) && !(rentals_pending_BranchID.SelectedValue.ToString() == "System.Data.DataRowView")) {
                 cmd.Parameters.AddWithValue("@BranchID", rentals_pending_BranchID.SelectedValue);
                 Interaction interaction = new Interaction();
                 interaction.search(cmd, rentals_pending_Pending);
@@ -193,6 +195,7 @@ namespace WindowsFormsApplication2 {
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
+            PopulateRateMenus();
         }
 
         //needs customer credentials from login, or selection if employee
