@@ -38,6 +38,22 @@
             this.newRental = new System.Windows.Forms.TabPage();
             this.rentals = new System.Windows.Forms.TabControl();
             this.rentals_create = new System.Windows.Forms.TabPage();
+            this.rental_create_rate_Total = new System.Windows.Forms.TextBox();
+            this.label100 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.rental_create_RateCost = new System.Windows.Forms.TextBox();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.rental_create_Rate = new System.Windows.Forms.ComboBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.rental_create_BodyType = new System.Windows.Forms.ComboBox();
+            this.rental_create_Make = new System.Windows.Forms.ComboBox();
+            this.rental_create_Model = new System.Windows.Forms.ComboBox();
             this.rentals_create_CID = new System.Windows.Forms.ListBox();
             this.label66 = new System.Windows.Forms.Label();
             this.rentals_create_submitbtn = new System.Windows.Forms.Button();
@@ -64,9 +80,7 @@
             this.label87 = new System.Windows.Forms.Label();
             this.label86 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
-            this.rentals_search_Vehicle_name = new System.Windows.Forms.TextBox();
             this.rentals_search_Vehicle_make = new System.Windows.Forms.ComboBox();
-            this.label84 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.rentals_search_RentalRate_type = new System.Windows.Forms.CheckedListBox();
@@ -81,10 +95,8 @@
             this.label76 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.rentals_search_Vehicle_milesTravelled = new System.Windows.Forms.NumericUpDown();
-            this.rentals_search_return_Date = new System.Windows.Forms.DateTimePicker();
             this.label74 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
-            this.rentals_search_rented_Date = new System.Windows.Forms.DateTimePicker();
             this.label72 = new System.Windows.Forms.Label();
             this.rentals_pending = new System.Windows.Forms.TabPage();
             this.rentals_pending_submitbtn = new System.Windows.Forms.Button();
@@ -112,7 +124,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.cars_search_BID = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.cars_search_Mileage = new System.Windows.Forms.TextBox();
             this.cars_search_VIN = new System.Windows.Forms.TextBox();
             this.cars_search_Type = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -291,22 +302,13 @@
             this.branchesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.branchesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.rental_create_Model = new System.Windows.Forms.ComboBox();
-            this.rental_create_Make = new System.Windows.Forms.ComboBox();
-            this.rental_create_BodyType = new System.Windows.Forms.ComboBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.rental_create_Rate = new System.Windows.Forms.ComboBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label97 = new System.Windows.Forms.Label();
-            this.label98 = new System.Windows.Forms.Label();
-            this.rental_create_RateCost = new System.Windows.Forms.TextBox();
-            this.label99 = new System.Windows.Forms.Label();
-            this.label100 = new System.Windows.Forms.Label();
-            this.rental_create_rate_Total = new System.Windows.Forms.TextBox();
+            this.rentals_create_search_Button = new System.Windows.Forms.Button();
+            this.rentals_create_reset_Button = new System.Windows.Forms.Button();
+            this.rentals_search_return_Date = new System.Windows.Forms.DateTimePicker();
+            this.rentals_search_rented_Date = new System.Windows.Forms.DateTimePicker();
+            this.rentals_search_use_date_Rented = new System.Windows.Forms.CheckBox();
+            this.rentals_search_use_date_Return = new System.Windows.Forms.CheckBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             eIDLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -375,6 +377,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // eIDLabel
@@ -543,6 +546,143 @@
             this.rentals_create.UseVisualStyleBackColor = true;
             this.rentals_create.Click += new System.EventHandler(this.rentals_create_Click);
             // 
+            // rental_create_rate_Total
+            // 
+            this.rental_create_rate_Total.Location = new System.Drawing.Point(796, 205);
+            this.rental_create_rate_Total.Name = "rental_create_rate_Total";
+            this.rental_create_rate_Total.Size = new System.Drawing.Size(121, 22);
+            this.rental_create_rate_Total.TabIndex = 28;
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(774, 210);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(16, 17);
+            this.label100.TabIndex = 27;
+            this.label100.Text = "$";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(664, 210);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(104, 17);
+            this.label99.TabIndex = 26;
+            this.label99.Text = "Total Rate cost";
+            // 
+            // rental_create_RateCost
+            // 
+            this.rental_create_RateCost.Location = new System.Drawing.Point(796, 162);
+            this.rental_create_RateCost.Name = "rental_create_RateCost";
+            this.rental_create_RateCost.Size = new System.Drawing.Size(121, 22);
+            this.rental_create_RateCost.TabIndex = 25;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(700, 162);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(68, 17);
+            this.label98.TabIndex = 24;
+            this.label98.Text = "Rate cost";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(796, 162);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(0, 17);
+            this.label97.TabIndex = 23;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(606, 53);
+            this.label96.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(38, 17);
+            this.label96.TabIndex = 22;
+            this.label96.Text = "Start";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(774, 162);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(16, 17);
+            this.label95.TabIndex = 21;
+            this.label95.Text = "$";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(752, 125);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(38, 17);
+            this.label94.TabIndex = 20;
+            this.label94.Text = "Rate";
+            // 
+            // rental_create_Rate
+            // 
+            this.rental_create_Rate.FormattingEnabled = true;
+            this.rental_create_Rate.Location = new System.Drawing.Point(796, 125);
+            this.rental_create_Rate.Name = "rental_create_Rate";
+            this.rental_create_Rate.Size = new System.Drawing.Size(121, 24);
+            this.rental_create_Rate.TabIndex = 19;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(302, 128);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(71, 17);
+            this.label93.TabIndex = 18;
+            this.label93.Text = "Body type";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(331, 88);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(42, 17);
+            this.label92.TabIndex = 17;
+            this.label92.Text = "Make";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(327, 47);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(46, 17);
+            this.label91.TabIndex = 16;
+            this.label91.Text = "Model";
+            // 
+            // rental_create_BodyType
+            // 
+            this.rental_create_BodyType.FormattingEnabled = true;
+            this.rental_create_BodyType.Location = new System.Drawing.Point(379, 125);
+            this.rental_create_BodyType.Name = "rental_create_BodyType";
+            this.rental_create_BodyType.Size = new System.Drawing.Size(170, 24);
+            this.rental_create_BodyType.TabIndex = 15;
+            // 
+            // rental_create_Make
+            // 
+            this.rental_create_Make.FormattingEnabled = true;
+            this.rental_create_Make.Location = new System.Drawing.Point(379, 85);
+            this.rental_create_Make.Name = "rental_create_Make";
+            this.rental_create_Make.Size = new System.Drawing.Size(170, 24);
+            this.rental_create_Make.TabIndex = 14;
+            // 
+            // rental_create_Model
+            // 
+            this.rental_create_Model.FormattingEnabled = true;
+            this.rental_create_Model.Location = new System.Drawing.Point(379, 46);
+            this.rental_create_Model.Name = "rental_create_Model";
+            this.rental_create_Model.Size = new System.Drawing.Size(170, 24);
+            this.rental_create_Model.TabIndex = 13;
+            this.rental_create_Model.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // rentals_create_CID
             // 
             this.rentals_create_CID.FormattingEnabled = true;
@@ -656,6 +796,10 @@
             // 
             // rentals_search
             // 
+            this.rentals_search.Controls.Add(this.rentals_search_use_date_Return);
+            this.rentals_search.Controls.Add(this.rentals_search_use_date_Rented);
+            this.rentals_search.Controls.Add(this.rentals_create_reset_Button);
+            this.rentals_search.Controls.Add(this.rentals_create_search_Button);
             this.rentals_search.Controls.Add(this.rentals_search_Datagridview);
             this.rentals_search.Controls.Add(this.label90);
             this.rentals_search.Controls.Add(this.rentals_search_fees_Listbox);
@@ -670,9 +814,7 @@
             this.rentals_search.Controls.Add(this.label87);
             this.rentals_search.Controls.Add(this.label86);
             this.rentals_search.Controls.Add(this.label85);
-            this.rentals_search.Controls.Add(this.rentals_search_Vehicle_name);
             this.rentals_search.Controls.Add(this.rentals_search_Vehicle_make);
-            this.rentals_search.Controls.Add(this.label84);
             this.rentals_search.Controls.Add(this.label83);
             this.rentals_search.Controls.Add(this.label82);
             this.rentals_search.Controls.Add(this.rentals_search_RentalRate_type);
@@ -777,7 +919,9 @@
             // rentals_search_Vehicle_bodyType
             // 
             this.rentals_search_Vehicle_bodyType.FormattingEnabled = true;
-            this.rentals_search_Vehicle_bodyType.Location = new System.Drawing.Point(94, 124);
+            this.rentals_search_Vehicle_bodyType.Items.AddRange(new object[] {
+            ""});
+            this.rentals_search_Vehicle_bodyType.Location = new System.Drawing.Point(94, 112);
             this.rentals_search_Vehicle_bodyType.Name = "rentals_search_Vehicle_bodyType";
             this.rentals_search_Vehicle_bodyType.Size = new System.Drawing.Size(200, 24);
             this.rentals_search_Vehicle_bodyType.TabIndex = 27;
@@ -785,7 +929,9 @@
             // rentals_search_Vehicle_model
             // 
             this.rentals_search_Vehicle_model.FormattingEnabled = true;
-            this.rentals_search_Vehicle_model.Location = new System.Drawing.Point(94, 94);
+            this.rentals_search_Vehicle_model.Items.AddRange(new object[] {
+            ""});
+            this.rentals_search_Vehicle_model.Location = new System.Drawing.Point(94, 72);
             this.rentals_search_Vehicle_model.Name = "rentals_search_Vehicle_model";
             this.rentals_search_Vehicle_model.Size = new System.Drawing.Size(200, 24);
             this.rentals_search_Vehicle_model.TabIndex = 26;
@@ -793,7 +939,7 @@
             // label87
             // 
             this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(12, 124);
+            this.label87.Location = new System.Drawing.Point(12, 115);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(76, 17);
             this.label87.TabIndex = 25;
@@ -802,7 +948,7 @@
             // label86
             // 
             this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(42, 97);
+            this.label86.Location = new System.Drawing.Point(46, 79);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(46, 17);
             this.label86.TabIndex = 24;
@@ -811,35 +957,21 @@
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(46, 63);
+            this.label85.Location = new System.Drawing.Point(46, 41);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(42, 17);
             this.label85.TabIndex = 23;
             this.label85.Text = "Make";
             // 
-            // rentals_search_Vehicle_name
-            // 
-            this.rentals_search_Vehicle_name.Location = new System.Drawing.Point(94, 34);
-            this.rentals_search_Vehicle_name.Name = "rentals_search_Vehicle_name";
-            this.rentals_search_Vehicle_name.Size = new System.Drawing.Size(200, 22);
-            this.rentals_search_Vehicle_name.TabIndex = 22;
-            // 
             // rentals_search_Vehicle_make
             // 
             this.rentals_search_Vehicle_make.FormattingEnabled = true;
-            this.rentals_search_Vehicle_make.Location = new System.Drawing.Point(94, 62);
+            this.rentals_search_Vehicle_make.Items.AddRange(new object[] {
+            ""});
+            this.rentals_search_Vehicle_make.Location = new System.Drawing.Point(94, 36);
             this.rentals_search_Vehicle_make.Name = "rentals_search_Vehicle_make";
             this.rentals_search_Vehicle_make.Size = new System.Drawing.Size(200, 24);
             this.rentals_search_Vehicle_make.TabIndex = 21;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(43, 34);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(45, 17);
-            this.label84.TabIndex = 20;
-            this.label84.Text = "Name";
             // 
             // label83
             // 
@@ -926,7 +1058,7 @@
             // rentals_search_Pending_retrun_radio
             // 
             this.rentals_search_Pending_retrun_radio.AutoSize = true;
-            this.rentals_search_Pending_retrun_radio.Location = new System.Drawing.Point(780, 154);
+            this.rentals_search_Pending_retrun_radio.Location = new System.Drawing.Point(780, 175);
             this.rentals_search_Pending_retrun_radio.Name = "rentals_search_Pending_retrun_radio";
             this.rentals_search_Pending_retrun_radio.Size = new System.Drawing.Size(72, 21);
             this.rentals_search_Pending_retrun_radio.TabIndex = 9;
@@ -937,7 +1069,7 @@
             // rentals_search_Pending_rental_radio
             // 
             this.rentals_search_Pending_rental_radio.AutoSize = true;
-            this.rentals_search_Pending_rental_radio.Location = new System.Drawing.Point(780, 127);
+            this.rentals_search_Pending_rental_radio.Location = new System.Drawing.Point(780, 148);
             this.rentals_search_Pending_rental_radio.Name = "rentals_search_Pending_rental_radio";
             this.rentals_search_Pending_rental_radio.Size = new System.Drawing.Size(70, 21);
             this.rentals_search_Pending_rental_radio.TabIndex = 8;
@@ -948,7 +1080,7 @@
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(777, 106);
+            this.label76.Location = new System.Drawing.Point(711, 112);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(114, 17);
             this.label76.TabIndex = 7;
@@ -970,13 +1102,6 @@
             this.rentals_search_Vehicle_milesTravelled.Size = new System.Drawing.Size(181, 22);
             this.rentals_search_Vehicle_milesTravelled.TabIndex = 5;
             // 
-            // rentals_search_return_Date
-            // 
-            this.rentals_search_return_Date.Location = new System.Drawing.Point(780, 70);
-            this.rentals_search_return_Date.Name = "rentals_search_return_Date";
-            this.rentals_search_return_Date.Size = new System.Drawing.Size(200, 22);
-            this.rentals_search_return_Date.TabIndex = 4;
-            // 
             // label74
             // 
             this.label74.AutoSize = true;
@@ -994,13 +1119,6 @@
             this.label73.Size = new System.Drawing.Size(54, 17);
             this.label73.TabIndex = 2;
             this.label73.Text = "Rented";
-            // 
-            // rentals_search_rented_Date
-            // 
-            this.rentals_search_rented_Date.Location = new System.Drawing.Point(780, 32);
-            this.rentals_search_rented_Date.Name = "rentals_search_rented_Date";
-            this.rentals_search_rented_Date.Size = new System.Drawing.Size(200, 22);
-            this.rentals_search_rented_Date.TabIndex = 1;
             // 
             // label72
             // 
@@ -1097,7 +1215,7 @@
             this.tabControl5.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl5.Name = "tabControl5";
             this.tabControl5.SelectedIndex = 0;
-            this.tabControl5.Size = new System.Drawing.Size(992, 394);
+            this.tabControl5.Size = new System.Drawing.Size(1000, 416);
             this.tabControl5.TabIndex = 2;
             // 
             // cars_create
@@ -1234,11 +1352,11 @@
             // 
             // cars_search
             // 
+            this.cars_search.Controls.Add(this.numericUpDown1);
             this.cars_search.Controls.Add(this.dataGridView1);
             this.cars_search.Controls.Add(this.button5);
             this.cars_search.Controls.Add(this.cars_search_BID);
             this.cars_search.Controls.Add(this.label20);
-            this.cars_search.Controls.Add(this.cars_search_Mileage);
             this.cars_search.Controls.Add(this.cars_search_VIN);
             this.cars_search.Controls.Add(this.cars_search_Type);
             this.cars_search.Controls.Add(this.label29);
@@ -1248,7 +1366,7 @@
             this.cars_search.Margin = new System.Windows.Forms.Padding(4);
             this.cars_search.Name = "cars_search";
             this.cars_search.Padding = new System.Windows.Forms.Padding(4);
-            this.cars_search.Size = new System.Drawing.Size(984, 365);
+            this.cars_search.Size = new System.Drawing.Size(992, 387);
             this.cars_search.TabIndex = 1;
             this.cars_search.Text = "Search";
             this.cars_search.UseVisualStyleBackColor = true;
@@ -1291,14 +1409,6 @@
             this.label20.Size = new System.Drawing.Size(53, 17);
             this.label20.TabIndex = 64;
             this.label20.Text = "Branch";
-            // 
-            // cars_search_Mileage
-            // 
-            this.cars_search_Mileage.Location = new System.Drawing.Point(257, 81);
-            this.cars_search_Mileage.Margin = new System.Windows.Forms.Padding(4);
-            this.cars_search_Mileage.Name = "cars_search_Mileage";
-            this.cars_search_Mileage.Size = new System.Drawing.Size(203, 22);
-            this.cars_search_Mileage.TabIndex = 63;
             // 
             // cars_search_VIN
             // 
@@ -1710,7 +1820,7 @@
             this.branches_search_Results.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.branches_search_Results.Name = "branches_search_Results";
             this.branches_search_Results.RowTemplate.Height = 24;
-            this.branches_search_Results.Size = new System.Drawing.Size(941, 164);
+            this.branches_search_Results.Size = new System.Drawing.Size(962, 182);
             this.branches_search_Results.TabIndex = 0;
             // 
             // customers
@@ -2178,7 +2288,7 @@
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(981, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(974, 203);
             this.dataGridView2.TabIndex = 0;
             // 
             // employees
@@ -2622,11 +2732,9 @@
             // 
             // employeesDataGridView
             // 
-            this.employeesDataGridView.AutoGenerateColumns = false;
             this.employeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EID});
-            this.employeesDataGridView.DataSource = this.employeesBindingSource;
             this.employeesDataGridView.Location = new System.Drawing.Point(3, 119);
             this.employeesDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employeesDataGridView.Name = "employeesDataGridView";
@@ -3113,142 +3221,63 @@
             this.types_search.Text = "Search";
             this.types_search.UseVisualStyleBackColor = true;
             // 
-            // rental_create_Model
+            // rentals_create_search_Button
             // 
-            this.rental_create_Model.FormattingEnabled = true;
-            this.rental_create_Model.Location = new System.Drawing.Point(379, 46);
-            this.rental_create_Model.Name = "rental_create_Model";
-            this.rental_create_Model.Size = new System.Drawing.Size(170, 24);
-            this.rental_create_Model.TabIndex = 13;
-            this.rental_create_Model.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.rentals_create_search_Button.Location = new System.Drawing.Point(899, 138);
+            this.rentals_create_search_Button.Name = "rentals_create_search_Button";
+            this.rentals_create_search_Button.Size = new System.Drawing.Size(75, 23);
+            this.rentals_create_search_Button.TabIndex = 37;
+            this.rentals_create_search_Button.Text = "Search";
+            this.rentals_create_search_Button.UseVisualStyleBackColor = true;
+            this.rentals_create_search_Button.Click += new System.EventHandler(this.rentals_create_search_Button_Click);
             // 
-            // rental_create_Make
+            // rentals_create_reset_Button
             // 
-            this.rental_create_Make.FormattingEnabled = true;
-            this.rental_create_Make.Location = new System.Drawing.Point(379, 85);
-            this.rental_create_Make.Name = "rental_create_Make";
-            this.rental_create_Make.Size = new System.Drawing.Size(170, 24);
-            this.rental_create_Make.TabIndex = 14;
+            this.rentals_create_reset_Button.Location = new System.Drawing.Point(899, 175);
+            this.rentals_create_reset_Button.Name = "rentals_create_reset_Button";
+            this.rentals_create_reset_Button.Size = new System.Drawing.Size(75, 23);
+            this.rentals_create_reset_Button.TabIndex = 38;
+            this.rentals_create_reset_Button.Text = "Reset";
+            this.rentals_create_reset_Button.UseVisualStyleBackColor = true;
             // 
-            // rental_create_BodyType
+            // rentals_search_return_Date
             // 
-            this.rental_create_BodyType.FormattingEnabled = true;
-            this.rental_create_BodyType.Location = new System.Drawing.Point(379, 125);
-            this.rental_create_BodyType.Name = "rental_create_BodyType";
-            this.rental_create_BodyType.Size = new System.Drawing.Size(170, 24);
-            this.rental_create_BodyType.TabIndex = 15;
+            this.rentals_search_return_Date.Location = new System.Drawing.Point(768, 70);
+            this.rentals_search_return_Date.Name = "rentals_search_return_Date";
+            this.rentals_search_return_Date.Size = new System.Drawing.Size(200, 22);
+            this.rentals_search_return_Date.TabIndex = 4;
             // 
-            // label91
+            // rentals_search_rented_Date
             // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(327, 47);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(46, 17);
-            this.label91.TabIndex = 16;
-            this.label91.Text = "Model";
+            this.rentals_search_rented_Date.Location = new System.Drawing.Point(768, 34);
+            this.rentals_search_rented_Date.Name = "rentals_search_rented_Date";
+            this.rentals_search_rented_Date.Size = new System.Drawing.Size(200, 22);
+            this.rentals_search_rented_Date.TabIndex = 1;
             // 
-            // label92
+            // rentals_search_use_date_Rented
             // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(331, 88);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(42, 17);
-            this.label92.TabIndex = 17;
-            this.label92.Text = "Make";
+            this.rentals_search_use_date_Rented.AutoSize = true;
+            this.rentals_search_use_date_Rented.Location = new System.Drawing.Point(971, 36);
+            this.rentals_search_use_date_Rented.Name = "rentals_search_use_date_Rented";
+            this.rentals_search_use_date_Rented.Size = new System.Drawing.Size(18, 17);
+            this.rentals_search_use_date_Rented.TabIndex = 40;
+            this.rentals_search_use_date_Rented.UseVisualStyleBackColor = true;
             // 
-            // label93
+            // rentals_search_use_date_Return
             // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(302, 128);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(71, 17);
-            this.label93.TabIndex = 18;
-            this.label93.Text = "Body type";
+            this.rentals_search_use_date_Return.AutoSize = true;
+            this.rentals_search_use_date_Return.Location = new System.Drawing.Point(971, 75);
+            this.rentals_search_use_date_Return.Name = "rentals_search_use_date_Return";
+            this.rentals_search_use_date_Return.Size = new System.Drawing.Size(18, 17);
+            this.rentals_search_use_date_Return.TabIndex = 41;
+            this.rentals_search_use_date_Return.UseVisualStyleBackColor = true;
             // 
-            // rental_create_Rate
+            // numericUpDown1
             // 
-            this.rental_create_Rate.FormattingEnabled = true;
-            this.rental_create_Rate.Location = new System.Drawing.Point(796, 125);
-            this.rental_create_Rate.Name = "rental_create_Rate";
-            this.rental_create_Rate.Size = new System.Drawing.Size(121, 24);
-            this.rental_create_Rate.TabIndex = 19;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(752, 125);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(38, 17);
-            this.label94.TabIndex = 20;
-            this.label94.Text = "Rate";
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(774, 162);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(16, 17);
-            this.label95.TabIndex = 21;
-            this.label95.Text = "$";
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(606, 53);
-            this.label96.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(38, 17);
-            this.label96.TabIndex = 22;
-            this.label96.Text = "Start";
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(796, 162);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(0, 17);
-            this.label97.TabIndex = 23;
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(700, 162);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(68, 17);
-            this.label98.TabIndex = 24;
-            this.label98.Text = "Rate cost";
-            // 
-            // rental_create_RateCost
-            // 
-            this.rental_create_RateCost.Location = new System.Drawing.Point(796, 162);
-            this.rental_create_RateCost.Name = "rental_create_RateCost";
-            this.rental_create_RateCost.Size = new System.Drawing.Size(121, 22);
-            this.rental_create_RateCost.TabIndex = 25;
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(664, 210);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(104, 17);
-            this.label99.TabIndex = 26;
-            this.label99.Text = "Total Rate cost";
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(774, 210);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(16, 17);
-            this.label100.TabIndex = 27;
-            this.label100.Text = "$";
-            // 
-            // rental_create_rate_Total
-            // 
-            this.rental_create_rate_Total.Location = new System.Drawing.Point(796, 205);
-            this.rental_create_rate_Total.Name = "rental_create_rate_Total";
-            this.rental_create_rate_Total.Size = new System.Drawing.Size(121, 22);
-            this.rental_create_rate_Total.TabIndex = 28;
+            this.numericUpDown1.Location = new System.Drawing.Point(257, 79);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(203, 22);
+            this.numericUpDown1.TabIndex = 68;
             // 
             // Main
             // 
@@ -3333,6 +3362,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3424,7 +3454,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox cars_search_BID;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox cars_search_Mileage;
         private System.Windows.Forms.TextBox cars_search_VIN;
         private System.Windows.Forms.TextBox cars_search_Type;
         private System.Windows.Forms.Label label29;
@@ -3600,10 +3629,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.NumericUpDown rentals_search_Vehicle_milesTravelled;
-        private System.Windows.Forms.DateTimePicker rentals_search_return_Date;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.DateTimePicker rentals_search_rented_Date;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label label78;
@@ -3621,9 +3648,7 @@
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.TextBox rentals_search_Vehicle_name;
         private System.Windows.Forms.ComboBox rentals_search_Vehicle_make;
-        private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label88;
@@ -3650,6 +3675,13 @@
         private System.Windows.Forms.TextBox rental_create_rate_Total;
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Button rentals_create_reset_Button;
+        private System.Windows.Forms.Button rentals_create_search_Button;
+        private System.Windows.Forms.DateTimePicker rentals_search_return_Date;
+        private System.Windows.Forms.DateTimePicker rentals_search_rented_Date;
+        private System.Windows.Forms.CheckBox rentals_search_use_date_Return;
+        private System.Windows.Forms.CheckBox rentals_search_use_date_Rented;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

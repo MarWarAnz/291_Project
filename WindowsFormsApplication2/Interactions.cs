@@ -75,9 +75,11 @@ public class Interaction
         }
     }
 
-    public void search(SqlCommand cmd, ListBox listbox, string display, string value) {
+    public void search(SqlCommand cmd, ListBox listbox, string display, string value)
+    {
         string connString = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT291_Project"].ConnectionString;
-        using (SqlConnection connection = new SqlConnection(connString)) {
+        using (SqlConnection connection = new SqlConnection(connString))
+        {
             cmd.CommandType = CommandType.Text;
             cmd.Connection = connection;
             SqlDataAdapter data = new SqlDataAdapter(cmd);
@@ -87,5 +89,21 @@ public class Interaction
             listbox.DisplayMember = display;
             listbox.ValueMember = value;
         }
+    }
+    public void search(SqlCommand cmd, ComboBox combobox, string display, string value)
+    {
+        string connString = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT291_Project"].ConnectionString;
+        using (SqlConnection connection = new SqlConnection(connString))
+        {
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = connection;
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable results = new DataTable();
+            data.Fill(results);
+            combobox.DataSource = results;
+            combobox.DisplayMember = display;
+            combobox.ValueMember = value;
+        }
+
     }
 }

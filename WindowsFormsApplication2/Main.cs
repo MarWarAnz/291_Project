@@ -14,7 +14,7 @@ namespace WindowsFormsApplication2 {
 
     public partial class Main : Form {
 
-        enum permissions {Customer, Employee, Manager};
+        enum permissions { Customer, Employee, Manager };
         permissions userType = permissions.Customer;
         int ID = 1;
 
@@ -36,11 +36,12 @@ namespace WindowsFormsApplication2 {
             PopulateCustomerMenus();
             PopulateRateMenus();
             branches_search_datagrideview_Populate();
+            rentals_search_datagrideview_Populate();
         }
 
         private void PopulateCustomerMenus() {
             SqlCommand cmd;
-             if (userType == permissions.Employee || userType == permissions.Manager) {
+            if (userType == permissions.Employee || userType == permissions.Manager) {
                 cmd = new SqlCommand("Select Concat(FirstName, LastName) as Name, CID from Customers");
             } else {
                 rentals_create_CID.Enabled = false;
@@ -60,7 +61,7 @@ namespace WindowsFormsApplication2 {
         private void PopulateVehicleMenus() {
             SqlCommand cmd = new SqlCommand("SELECT CONCAT(Make, Model) as thisCar, VID FROM Vehicles INNER JOIN CarTypes ON Vehicles.TypeID = CarTypes.TID WHERE CurrentBID = @BranchID");
             Console.WriteLine("here here " + rentals_create_RentedBranch.SelectedValue);
-            if ( !(rentals_create_RentedBranch.SelectedValue == null) && !(rentals_create_RentedBranch.SelectedValue.ToString() == "System.Data.DataRowView"))
+            if (!(rentals_create_RentedBranch.SelectedValue == null) && !(rentals_create_RentedBranch.SelectedValue.ToString() == "System.Data.DataRowView"))
             {
                 cmd.Parameters.AddWithValue("@BranchID", rentals_create_RentedBranch.SelectedValue.ToString());
                 Interaction interaction = new Interaction();
@@ -118,7 +119,7 @@ namespace WindowsFormsApplication2 {
             "VALUES (@TypeID, @Status, @VIN, @Mileage, @CurrentBID)");
             Control[] fields = { cars_create_TypeID, cars_create_Status, cars_create_VIN, cars_create_Mileage, cars_create_CurrentBID };
             validation.types[] checkAs = { validation.types.Type, validation.types.ID, validation.types.VIN, validation.types.Mileage, validation.types.ID };
-            bool[] nullable = { false, false, false, false, false};
+            bool[] nullable = { false, false, false, false, false };
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
@@ -145,7 +146,7 @@ namespace WindowsFormsApplication2 {
             SqlCommand cmd = new SqlCommand("INSERT INTO Employees " +
             "(FirstName, LastName, Phone1, Phone2, BID, Address1, Address2, City, Province, PostalCode)" +
             "VALUES (@FirstName, @LastName, @Phone1, @Phone2, @BID, @Address1, @Address2, @City, @Province, @PostalCode)");
-            bool[] nullable = { false, false, false, true, false, false, true, false, false, false , true, true };
+            bool[] nullable = { false, false, false, true, false, false, true, false, false, false, true, true };
             Control[] fields = { employees_create_FirstName, employees_create_LastName, employees_create_Phone1, employees_create_Phone2, employees_create_BID, employees_create_Address1, employees_create_Address2, employees_create_City, employees_create_Province, employees_create_PostalCode, employees_create_Username, employees_create_Password };
             validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Phone, validation.types.Phone, validation.types.ID, validation.types.Address, validation.types.Address, validation.types.City, validation.types.Province, validation.types.PostalCode, validation.types.Email, validation.types.Email };
 
@@ -159,7 +160,7 @@ namespace WindowsFormsApplication2 {
             "VALUES (@Name, @Cost)");
             Control[] fields = { fees_create_Name, fees_create_Cost };
             validation.types[] checkAs = { validation.types.Name, validation.types.CC };
-            bool[] nullable = { false, false};
+            bool[] nullable = { false, false };
 
             Interaction interaction = new Interaction();
             interaction.insert(cmd, fields, checkAs, nullable);
@@ -183,7 +184,7 @@ namespace WindowsFormsApplication2 {
                 "(Make, Model, BodyType, RateID)" +
                 "VALUES (@Make, @Model, @BodyType, @RateID)");
             Control[] fields = { types_create_Make, types_create_Model, types_create_BodyType, types_create_RateID };
-            validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Name, validation.types.ID};
+            validation.types[] checkAs = { validation.types.Name, validation.types.Name, validation.types.Name, validation.types.ID };
             bool[] nullable = { false, false, false, false };
 
             Interaction interaction = new Interaction();
@@ -210,8 +211,8 @@ namespace WindowsFormsApplication2 {
             SqlCommand cmd = new SqlCommand("INSERT INTO Transactions " +
                 "(DateOut, DateIn, RentedBranch, CID, Vehicle)" +
                 "VALUES (@DateOut, @DateIn, @RentedBranch, @CID, @Vehicle)");
-            Control[] fields = { rentals_create_DateOut, rentals_create_DateIn, rentals_create_RentedBranch, rentals_create_CID, rentals_create_Vehicle};
-            validation.types[] checkAs = { validation.types.Address, validation.types.Address, validation.types.ID, validation.types.ID, validation.types.ID};
+            Control[] fields = { rentals_create_DateOut, rentals_create_DateIn, rentals_create_RentedBranch, rentals_create_CID, rentals_create_Vehicle };
+            validation.types[] checkAs = { validation.types.Address, validation.types.Address, validation.types.ID, validation.types.ID, validation.types.ID };
             bool[] nullable = { false, false, false, false, false };
 
             Interaction interaction = new Interaction();
@@ -247,14 +248,58 @@ namespace WindowsFormsApplication2 {
 
         }
 
+        private void rentals_search_init()
+        {
+            Interaction interaction = new Interaction();
+
+            SqlCommand cmd = new SqlCommand("Select Make, TID from CarTypes");
+            interaction.search(cmd, rentals_search_Vehicle_make, "Make", "TID");
+
+            cmd = new SqlCommand("Select Model, TID from CarTypes");
+            interaction.search(cmd, rentals_search_Vehicle_model, "Model", "TID");
+
+            cmd = new SqlCommand("Select BodyType, TID from CarTypes");
+            interaction.search(cmd, rentals_search_Vehicle_bodyType, "BodyType", "TID");
+        }
+
         private void rentals_search_datagrideview_Populate()
         {
             Interaction interaction = new Interaction();
             SqlCommand cmd = new SqlCommand(
-                ""
-                );
-            interaction.search(cmd, rentals_search_Datagridview);
+                "SELECT T.DateIn"
+                + ", T.[DateOut]"
+                + ", T.[RealDateIn]"
+                + ", T.[MilesTravelled]"
+                + ", B1.[Name]"
+                + ", B2.[Name]"
+                + ", T.[RentedBranch]"
+                + ", T.[ReturnedBranch]"
+                + ", CT.[Make]"
+                + ", CT.[Make]"
+                + ", CT.[BodyType]"
+                + ", V.[Mileage]"
+                + ", C.[FirstName]"
+                + ", C.[LastName]"
+                + ", T.[Pending]"
+                + ", R.[Name]"
+                + "FROM"
+                + "  [CMPT291_Project].[dbo].[Transactions] as T,"
+                + "  [CMPT291_Project].[dbo].[Vehicles] as V,"
+                + "  [CMPT291_Project].[dbo].[CarTypes] as CT,"
+                + "  [CMPT291_Project].[dbo].[Rates] as R,"
+                + "  [CMPT291_Project].[dbo].[Customers] as C,"
+                + "  [CMPT291_Project].[dbo].[Fees] as F,"
+                + "  [CMPT291_Project].[dbo].[Branches] as B1,"
+                + "  [CMPT291_Project].[dbo].[Branches] as B2"
 
+                + "  WHERE T.RentedBranch = B1.BID"
+                + "  AND T.ReturnedBranch = B2.BID"
+                + "  AND T.Vehicle = V.VID"
+                + "  AND V.TypeID = CT.TID"
+                + "  AND CT.RateID = R.RateID"
+                + "  AND T.CID = C.CID");
+            interaction.search(cmd, rentals_search_Datagridview);
+            rentals_search_init();
         }
 
         private void branches_search_Submitbtn_Click(object sender, EventArgs e)
@@ -263,8 +308,8 @@ namespace WindowsFormsApplication2 {
                 "SELECT [Name], [Address1], [Address2], [City], [Province], [PostalCode], [Phone1], [Phone2]" +
                 "FROM [CMPT291_Project].[dbo].[Branches] ";
 
-            string[] sql_field = {"[Name]", "[City]", "[Province]", "[PostalCode]", "[Address1]", "[Phone1]", "[Address2]", "[Phone2]"};
-            Control[] fields = {branches_search_Name, branches_search_City, branches_search_Province, branches_search_PostalCode, branches_search_Address1, branches_search_Phonenumber};
+            string[] sql_field = { "[Name]", "[City]", "[Province]", "[PostalCode]", "[Address1]", "[Phone1]", "[Address2]", "[Phone2]" };
+            Control[] fields = { branches_search_Name, branches_search_City, branches_search_Province, branches_search_PostalCode, branches_search_Address1, branches_search_Phonenumber };
             validation.types[] types = {
                 validation.types.Name,
                 validation.types.City,
@@ -296,7 +341,7 @@ namespace WindowsFormsApplication2 {
             for (int i = 0; i < fields.Length; i++)
             {
                 if (fields[i].Text == "" || !val.validate(fields[i].Text, types[i]) || fields[i].Text == "0")
-                            continue;
+                    continue;
 
                 if (where_sql_Cmd == "")
                 {
@@ -328,10 +373,10 @@ namespace WindowsFormsApplication2 {
 
         private void branches_search_Refreshbtn_Click(object sender, EventArgs e)
         {
-                    SqlCommand cmd = new SqlCommand("SELECT [Name], [Address1], [Address2], [City], [Province], [PostalCode], [Phone1], [Phone2]" +
-                        "FROM [CMPT291_Project].[dbo].[Branches]");
-                    Interaction interaction = new Interaction();
-                    interaction.search(cmd, branches_search_Results);
+            SqlCommand cmd = new SqlCommand("SELECT [Name], [Address1], [Address2], [City], [Province], [PostalCode], [Phone1], [Phone2]" +
+                "FROM [CMPT291_Project].[dbo].[Branches]");
+            Interaction interaction = new Interaction();
+            interaction.search(cmd, branches_search_Results);
 
         }
 
@@ -357,7 +402,117 @@ namespace WindowsFormsApplication2 {
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private string rental_form_sql_builder(string[] sql_field, Control[] fields, validation.types[] types)
+        {
+            validation val = new validation();
+            string where_sql_Cmd = "";
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                if (fields[i].Text == "" || !val.validate(fields[i].Text, types[i]) || fields[i].Text == "0")
+                    continue;
+                if ((fields[i] == rentals_search_rented_Date && rentals_search_use_date_Rented.Checked == true) ||
+                    (fields[i] == rentals_search_return_Date && rentals_search_use_date_Return.Checked == true))
+                {
+                    where_sql_Cmd += "AND " + sql_field[i] + " = " + ((fields[i] as DateTimePicker).Value.Date).ToString() + "";
+                }
+                else if(fields[i] is NumericUpDown)
+                {
+                    where_sql_Cmd += "AND " + sql_field[i] + " = " + fields[i].Text + "";
+                }
+                else
+                {
+                    where_sql_Cmd += "AND " + sql_field[i] + " LIKE '%" + fields[i].Text + "%' ";
+                }
+            } // end of for
+            return where_sql_Cmd;
+        }
+
+        private void rentals_create_search_Button_Click(object sender, EventArgs e)
+        {
+            string sql_Cmd =
+                "SELECT T.DateIn"
+                + ", T.[DateOut]"
+                + ", T.[RealDateIn]"
+                + ", T.[MilesTravelled]"
+                + ", B1.[Name]"
+                + ", B2.[Name]"
+                + ", T.[RentedBranch]"
+                + ", T.[ReturnedBranch]"
+                + ", CT.[Make]"
+                + ", CT.[Make]"
+                + ", CT.[BodyType]"
+                + ", V.[Mileage]"
+                + ", C.[FirstName]"
+                + ", C.[LastName]"
+                + ", T.[Pending]"
+                + ", R.[Name]"
+                + "FROM"
+                + "  [CMPT291_Project].[dbo].[Transactions] as T,"
+                + "  [CMPT291_Project].[dbo].[Vehicles] as V,"
+                + "  [CMPT291_Project].[dbo].[CarTypes] as CT,"
+                + "  [CMPT291_Project].[dbo].[Rates] as R,"
+                + "  [CMPT291_Project].[dbo].[Customers] as C,"
+                + "  [CMPT291_Project].[dbo].[Fees] as F,"
+                + "  [CMPT291_Project].[dbo].[Branches] as B1,"
+                + "  [CMPT291_Project].[dbo].[Branches] as B2"
+
+                + "  WHERE T.RentedBranch = B1.BID"
+                + "  AND T.ReturnedBranch = B2.BID"
+                + "  AND T.Vehicle = V.VID"
+                + "  AND V.TypeID = CT.TID"
+                + "  AND CT.RateID = R.RateID"
+                + "  AND T.CID = C.CID ";
+
+            string[] sql_field = {"T.DateIn"
+                ," T.[DateOut]"
+                ," T.[RealDateIn]"
+                ," T.[MilesTravelled]"
+                ," B1.[Name]"
+                ," B2.[Name]"
+                ," T.[RentedBranch]"
+                ," T.[ReturnedBranch]"
+                ," CT.[Make]"
+                ," CT.[Make]"
+                ," CT.[BodyType]"
+                ," V.[Mileage]"
+                ," C.[FirstName]"
+                ," C.[LastName]"
+                ," T.[Pending]"
+                ," R.[Name]" };
+            Control[] fields = { rentals_search_rented_Date, rentals_search_return_Date};
+            validation.types[] types = {
+                validation.types.Address,
+                validation.types.Address,
+            };
+
+            string where_sql_Cmd = rental_form_sql_builder(sql_field, fields, types);
+
+            if (where_sql_Cmd != "")
+            {
+                sql_Cmd += where_sql_Cmd;
+            }
+
+            Console.WriteLine("sql comand: " + sql_Cmd);
+
+            SqlCommand cmd = new SqlCommand(sql_Cmd);
+            Interaction interaction = new Interaction();
+            interaction.search(cmd, branches_search_Results);
             
         }
+
+        // where_sql_Cmd += "AND " + sql_field[i] + " LIKE '%" + fields[i].Text + "%' ";
+
+
+    
+
     }
 }
